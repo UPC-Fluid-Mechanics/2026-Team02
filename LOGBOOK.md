@@ -41,13 +41,13 @@
 - Distribution of the different sections of the report among the team members.
 - Search and comparison of commercial axial fans used for tunnel ventilation.
 - Comparison of dimensions, rotational speed, flow rate and performance of different commercial models.
-- Selection and analysis of the SODECA THT/IMP-LS-UNI-50-2/4T-6-F400 as the main commercial reference.
+- Selection and analysis of the SODECA THT/IMP-LS-UNI-50-2/4T-6-F500 as the main commercial reference.
 - Review of the individual work completed by each team member.
 - Integration of the different sections into a single document.
 - Joint review of the complete Release 0 to check consistency between the different sections, data and units.
 
 ### Decisions made
-- The SODECA THT/IMP-LS-UNI-50-2/4T-6-F400 will be used as the main commercial reference for the project.
+- The SODECA THT/IMP-LS-UNI-50-2/4T-6-F500 will be used as the main commercial reference for the project.
 - The low-speed operating point will be used as the preliminary reference condition for the theoretical design.
 - Three commercial tunnel ventilation fans will be included as comparison examples.
 - All sections will be combined into the same project report and reviewed jointly before submission.
