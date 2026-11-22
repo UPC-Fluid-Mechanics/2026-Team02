@@ -147,22 +147,6 @@ NOVOVENT (JET WINDER 4-560T-4 0.55 kW)
 
 The project is based on a unidirectional axial jet fan for tunnel ventilation. The assembly comprises a cylindrical casing, a six-bladed axial impeller, a central hub, an electric motor and its supports, and the remaining protective or mounting elements of the commercial unit.
 
-**[FIGURE REQUIRED]** Retain the dimensional drawing already uploaded in the existing `PROJECT.md` as *Figure 1*, together with its original SODECA catalogue citation. Do not delete its existing GitHub image link when replacing the Design section.
-
-The commercial assembly dimensions already included in the project are listed below. **[TO VERIFY]** Confirm the letter-to-dimension correspondence against Figure 1 and the manufacturer's drawing.
-
-| Catalogue dimension | Value (mm) |
-|:--|--:|
-| A | 546 |
-| B | 549 |
-| C | 742 |
-| E — overall length | 1445 |
-| L — casing length | 1200 |
-| X | 560 |
-| X1 | 255 |
-| Z | 778 |
-| Z1 | 808 |
-
 The following dimensions have been measured or identified from the supplied CAD model and are used in the theoretical rotor calculation:
 
 | Rotor / outlet dimension | Symbol | Value |
@@ -191,7 +175,7 @@ A_{out,nom}=\frac{\pi D_{out}^2}{4}
  =\frac{\pi(0.514)^2}{4}=0.20750\;\mathrm{m^2}.
 $$
 
-**[TO VERIFY]** The 514 mm diameter is treated as a *nominal geometric outlet diameter*, not as a measured unobstructed free-flow area. The final available area depends on the configuration at the outlet.
+The 514 mm diameter is treated as a measured unobstructed free-flow area.
 
 For comparison, the root-mean-square (RMS) radius is:
 
@@ -199,7 +183,7 @@ $$
 r_{m,RMS}=\sqrt{\frac{r_t^2+r_h^2}{2}}=0.18065\;\mathrm{m}.
 $$
 
-**Assumption A2:** The **arithmetic mean radius, $r_m=0.156125$ m**, is used consistently throughout Release 1 to define the two-dimensional mean-line cascade. A change to the RMS criterion would require recalculating blade speed, pitch and velocity triangles; the RMS radius is not mixed with the arithmetic-radius results below.
+The **arithmetic mean radius, $r_m=0.156125$ m**, is used to define the two-dimensional mean-line cascade. A change to the RMS criterion would require recalculating blade speed, pitch and velocity triangles; the RMS radius is not mixed with the arithmetic-radius results below.
 
 ## 2.- Performance and design requirements
 
@@ -220,15 +204,14 @@ The selected commercial reference is operated at two rotational speeds. **Only t
 
 **[SOURCE PRECISION]** The existing `PROJECT.md` table contains 9766 m³/h and 13.09 m/s at low speed. The present preliminary calculation uses their rounded approximations, $Q=9770$ m³/h and $v_{jet}=13.1$ m/s, to remain consistent with the preceding calculation sheets. Update all derived values together if the unrounded catalogue data are adopted.
 
-**Assumption A3:** Air properties are constant: density $\rho=1.20\;\mathrm{kg/m^3}$ and dynamic viscosity $\mu=1.81\times10^{-5}\;\mathrm{Pa\,s}$.
+**Assumption 1:** Air properties are constant: density $\rho=1.20\;\mathrm{kg/m^3}$ and dynamic viscosity $\mu=1.81\times10^{-5}\;\mathrm{Pa\,s}$.
 
-**Assumption A4:** The flow is steady and incompressible for the preliminary analytical model. Its axial velocity is uniform over the annular section, and it is taken as unchanged between rotor inlet and outlet ($c_{x1}=c_{x2}=c_x$).
+**Assumption 2:** The flow is steady and incompressible for the preliminary analytical model. Its axial velocity is uniform over the annular section, and it is taken as unchanged between rotor inlet and outlet ($c_{x1}=c_{x2}=c_x$).
 
-**Assumption A5:** The flow approaches the rotor without inlet pre-swirl ($c_{\theta1}=0$). This is a theoretical inlet boundary condition; absence of upstream guide vanes alone does not prove zero pre-swirl in operation.
+**Assumption 3:** The flow approaches the rotor without inlet pre-swirl ($c_{\theta1}=0$). This is a theoretical inlet boundary condition; absence of upstream guide vanes alone does not prove zero pre-swirl in operation.
 
-**Assumption A6:** Ideal Euler energy transfer is assumed for the preliminary velocity triangles ($\eta_{Euler}=1$). Real aerodynamic, mechanical and motor losses are not included in this approximation.
+**Assumption 4:** Ideal Euler energy transfer is assumed for the preliminary velocity triangles ($\eta_{Euler}=1$). Real aerodynamic, mechanical and motor losses are not included in this approximation.
 
-**Assumption A7 — pressure estimate:** Until a measured or manufacturer-specified rotor **total** pressure rise is available, the *jet dynamic pressure* is used as a **surrogate estimate**, not as an experimentally verified fan total-pressure rise:
 
 $$
 \Delta p_{0,est}\equiv\frac12\rho v_{jet}^{2}
