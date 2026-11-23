@@ -246,7 +246,7 @@ $$
 The commercial reference and preliminary theoretical fan have the following principal components. **The blade chord, profile and stagger are design choices, not CAD measurements of a finalized blade.**
 
 | Component | Description / function |
-|:--|:--|:--|:--|
+|:--|:--|
 | Rotor blades | Six blades impart tangential momentum to the airflow | $Z=6$; $D_t=494$ mm; preliminary mean-radius chord selected in Section 9 |
 | Hub | Connects blade roots to rotating assembly | $D_h=130.5$ mm |
 | Shaft / rotor coupling | Transmits torque | Attached to the hub by elastic coupling |
@@ -261,7 +261,7 @@ The commercial reference and preliminary theoretical fan have the following prin
 Material specifications are listed below according to manufacturing facilities
 
 | Component | Material | manufacturing justification |
-|:--|:--|:--|:--|:--|
+|:--|:--|:--|
 | Rotor blades | Aluminum | Low | Reduces rotor mass and rotational inertia. Suitable for manufacturing complex aerodynamic blade geometries by casting. |
 | Hub | Aluminum  | Reduces rotating mass while providing a mechanically resistant connection to the shaft. |
 | Shaft / coupling | Steel | Suitable for transmitting motor torque and resisting torsional and fatigue loads. |
