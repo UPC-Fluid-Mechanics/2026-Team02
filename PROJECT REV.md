@@ -498,9 +498,7 @@ This $\alpha_{chord}$ is not necessarily equal to the **metal-angle incidence** 
 ## 11.2 Mesh description
 ## 11.3 Boundary conditions
 
-## 12.- Experimentation: measurement of magnitudes and data acquisition
-
-## 12.- Experimentation: measurement of magnitudes and data acquisition
+## 12.- Experimentation: measurement of magnitudes and data acquisition (E1)
 
 The selected test specimen is the complete commercial SODECA **THT/IMP-C-UNI-50-2/4T-6**, corresponding to the STEP model selected by the group. The proposed test will use the low-speed setting of **1,445 rpm**. The catalogue maximum airflow of **9,770 m³/h (2.714 m³/s)** is used as a reference to size the flow meter [9].
 The actual airflow will be measured on the test bench.
@@ -523,60 +521,109 @@ The design estimate of approximately 103 Pa comes from the jet velocity. It is s
 
 ### 12.1.- Flow measurement and preliminary nozzle sizing
 
-| Flow-measurement option | Fit to the proposed test |
+The catalogue maximum airflow of **9,770 m³/h (2.714 m³/s)** is used
+as the sizing reference for the flow meter.
+
+| **Flow-measurement option** | **Fit to the proposed test** |
 |:--|:--|
-| ISA 1932 nozzle | The course measurement example uses this arrangement in a duct. It remains an alternative if a suitable duct and pressure budget are available. |
-| Long-radius nozzle | Also an in-duct alternative; its installation geometry and sizing would need to be matched to the duct and the expected pressure difference. |
-| Rounded-entry chamber nozzles | **Selected for the preliminary concept:** two identical nozzles in parallel allow one to be blanked at lower airflow to recover differential-pressure signal. The chamber needs additional space and the nozzle bank can shift the operating point. |
+| ISA 1932 nozzle | Used in the course example. It remains an option if a duct-based bench is selected and the expected pressure loss is acceptable. |
+| Long-radius nozzle | Also an option for a duct-based bench. Its throat diameter and installation would need to be sized for the expected flow and differential pressure. |
+| Rounded-entry chamber nozzles | **Selected for the preliminary bench.** Two identical nozzles in parallel allow one to be closed at lower flow rates to increase the differential-pressure signal. The main drawback is the additional space required for the chamber. |
 
-This choice is based on the 9,770 m³/h sizing flow and the intended chamber arrangement. It is not a finding that the ISA 1932 or long-radius options are unsuitable. The available footprint and pressure budget are the main reasons to revisit the choice in Section 14 [8, 16].
+The selection is based on the proposed chamber arrangement and the
+expected measurement signal. If the chamber does not fit in the
+laboratory, the duct-based options should be reconsidered [8, 16].
 
-For a first estimate at low pressure difference:
+For preliminary sizing, the total open throat area is:
 
 $$
-A_n = N_{\mathrm{open}}\frac{\pi d_n^2}{4},
-\qquad
-Q \approx C_d A_n \sqrt{\frac{2\Delta p_n}{\rho}},
-\qquad
-\Delta p_n \approx \frac{\rho}{2}\left(\frac{Q}{C_d A_n}\right)^2 .
+A_n=N_{\mathrm{open}}\frac{\pi d_n^2}{4}.
 $$
 
-The preliminary throat diameter is $d_n=0.400\ \mathrm{m}$ per nozzle, so $A_n=0.2513\ \mathrm{m^2}$ with both open. The calculation uses $\rho=1.20\ \mathrm{kg/m^3}$ and $C_d=0.985$; the latter is the coefficient used in the course inlet-chamber example and is not a calibration result for our nozzles.
+The airflow is calculated from the measured nozzle differential
+pressure. For sizing, the same expression is rearranged to estimate the
+differential pressure for a given airflow:
 
-| Sizing flow rate (m³/h) | Open nozzles | Estimated $\Delta p_n$ (Pa) |
+$$
+Q\approx C_d A_n\sqrt{\frac{2\Delta p_n}{\rho}},
+\qquad
+\Delta p_n\approx\frac{\rho}{2}
+\left(\frac{Q}{C_d A_n}\right)^2.
+$$
+
+Here, $N_{\mathrm{open}}$ is the number of open nozzles, $d_n$ is the
+throat diameter of each nozzle, $C_d$ is the discharge coefficient and
+$\rho$ is the air density. For two nozzles with $d_n=0.400\ \mathrm{m}$,
+the total open throat area is $A_n=0.2513\ \mathrm{m^2}$. The estimates
+use $\rho=1.20\ \mathrm{kg/m^3}$ and a provisional $C_d=0.985$ from the
+course inlet-chamber example [8].
+
+| **Reference airflow (m³/h)** | **Open nozzles** | **Estimated nozzle differential (Pa)** |
 |--:|--:|--:|
 | 9,770 | 2 | 72.1 |
 | 4,885 | 2 | 18.0 |
 | 4,885 | 1 | 72.1 |
 
-The two rows at 4,885 m³/h compare the sensor signal at the same flow. On the real bench, closing a nozzle changes the system resistance, so the operating point must be re-established before a comparison. Using the WIKA's basic ±1.25 Pa specification and the first-order sensitivity of the square-root relation, the pressure reading alone gives approximately **±0.9%** in $Q$ at 72.1 Pa and **±3.5%** at 18.0 Pa. These are instrument-bound sensitivity estimates under the datasheet conditions, not the complete uncertainties calculated in Section 13.
+At 4,885 m³/h, closing one nozzle increases the estimated signal from
+18.0 Pa to 72.1 Pa **if the flow rate is kept the same**. Since closing
+a nozzle changes the bench resistance, the operating point must be
+readjusted before comparing the two configurations.
+
+With both nozzles open, the pressure sensor's basic accuracy limit of
+±1.25 Pa corresponds to a first-order effect on the calculated flow
+of about **±0.9% at 72.1 Pa** and **±3.5% at 18.0 Pa** [10].
+This is the contribution of the pressure reading alone; the wider
+uncertainty assessment is presented in Section 13.
 
 > [!CAUTION]
-> 🟥 **12-B · Before using the rig: obtain the nozzle data.** From the laboratory inventory, supplier or calibration report, obtain the measured throat diameters and tolerances, the discharge coefficient or calibration curve for each nozzle, and its valid range. If no suitable nozzles are listed, document the selected profile and how it would be calibrated. Keep Ø400 mm and $C_d=0.985$ as proposal inputs until then.
+> 🟥 **12-B · Nozzle data to verify.** Confirm the actual throat diameters
+> and tolerances, and obtain the discharge coefficient or calibration curve
+> for each selected nozzle. Ø400 mm and $C_d=0.985$ are preliminary inputs.
 
-### 12.2.- Proposed instruments and recording
+### 12.2.- Selection of digital differential-pressure instruments
 
-| Channel | Proposed instrument and settings | Recording method |
+Two **WIKA A2G-500** differential-pressure transmitters with digital
+display and Modbus RTU output are proposed. Both use the **±250 Pa
+hardware version**, with different initial measurement settings [10].
+
+| **Instrument** | **Measurement** | **Initial setting** |
 |:--|:--|:--|
-| Nozzle differential pressure $\Delta p_n$ | WIKA A2G-500, multirange hardware ±250 Pa, initially set to 0–250 Pa. High port upstream of the nozzles; low port downstream. | Modbus RTU over RS-485 to PC using the digital version [10]. |
-| Chamber gauge pressure $p_{\mathrm{ch},g}$ | A separate A2G-500 of the same hardware range, with bidirectional measurement; initially ±150 Pa, to be checked during commissioning. Positive port on the chamber tap, negative port referenced to ambient. | Second Modbus address on the PC; channel distinct from $\Delta p_n$ [10]. |
-| Air temperature $T$ | TC Direct type T, ref. 405-388, Ø1.5 mm × 300 mm, with TC Direct USB logger 357-730. Probe tip in the inlet air clear of the wall. | Type T, °C, one reading per second; export from the logger and align by time and point ID [11]. |
-| Absolute pressure and RH | Testo 622 or equivalent laboratory barometer and hygrometer, outside the discharge jet. | Record ambient readings with the operating point ID [12]. |
-| Rotational speed $n$ | Testo 465 optical tachometer or an equivalent fixed optical pickup if the bench provides a suitable line of sight. | Log to the same point record, manually if using the handheld instrument [13]. |
-| Electrical active input $P_{\mathrm{el}}$ | Hioki PW3337 or an equivalent three-phase power analyser. Confirm the supply topology and range before use. | Log active power on the PC or record the stable display average for the same point ID [14]. |
+| WIKA A2G-500 — Channel 1 | Pressure difference across the nozzles, $\Delta p_n$. The high-pressure port is connected upstream and the low-pressure port downstream. | **0 to 250 Pa** |
+| WIKA A2G-500 — Channel 2 | Chamber pressure relative to the laboratory, $p_{\mathrm{ch},g}$. The positive port is connected to the chamber and the negative port to ambient. | **−150 to +150 Pa**, to be checked during commissioning |
 
-Zero the differential channels with both ports at the same pressure before testing. At each setting, record the point ID, time window, control setting, number of open nozzles, and readings from the individual instruments. Store the raw readings where available. Use the same stable averaging window for the time series; note any manually recorded readings and their times. Calculate air density from $T$, $p_a$ and RH before reducing the data, then calculate $Q$, $p_{fs}$, $p_f$, $P_{\mathrm{air}}$ and $\eta_{\mathrm{el}}$. An initial recording plan is to use a 30 s window after the readings stabilise, with temperature logged at 1 Hz. Check at commissioning whether a longer window or faster pressure acquisition is needed. The temperature logger and PC clocks should be aligned before the run.
+The first setting covers the **18–72 Pa** signals estimated in Section
+12.1. The second channel is bidirectional because the chamber pressure
+may be below ambient. WIKA specifies a basic accuracy of **±1.25 Pa
+at 23 °C** for this hardware version [10].
 
-Use one record per operating point with the following fields:
+Both readings will be recorded on a PC via **Modbus RTU over RS-485**.
+The two channels will be zeroed before testing by exposing both ports of
+each transmitter to the same pressure. Check that the selected ranges
+cover the actual operating points before starting the test sweep.
 
-| Identification | Raw measurement fields | Calculated fields |
-|:--|:--|:--|
-| Point ID, start and end time, auxiliary fan setting, open nozzle IDs | $\Delta p_n$ (Pa), $p_{\mathrm{ch},g}$ (Pa), $n$ (rpm), $T$ (°C), $p_a$ (Pa), RH (%), $P_{\mathrm{el}}$ (W), and $M$ (N·m) if measured | $\rho$ (kg/m³), $Q$ (m³/s), $p_{fs}$ and $p_f$ (Pa), $P_{\mathrm{air}}$ (W) and $\eta_{\mathrm{el}}$ |
+### 12.3.- Air temperature measurement and data recording
+
+Air temperature will be measured using a **TC Direct type T thermocouple,
+ref. 405-388**, with a **Ø1.5 mm × 300 mm** sheath, connected to the
+**TC Direct USB data logger, ref. 357-730** [11]. The probe tip will be
+positioned in the inlet airflow, clear of the wall. Air temperature will
+be used together with barometric pressure and relative humidity to
+calculate air density.
+
+The logger will be set to **type T, °C and one reading per second**.
+The logger clock and the pressure acquisition PC clock will be aligned
+before the test. For each operating point, the initial plan is to record
+a **30 s window after the readings stabilise**. The temperature data
+will then be downloaded via USB and matched to the pressure data using
+timestamps and the operating-point ID.
 
 > [!CAUTION]
-> 🟥 **12-C · Confirm the actual measurement chain.** Ask the laboratory for the **inventory and calibration references**, including the pressure ranges, DAQ interfaces and a way to measure speed with the guard in place. Obtain the **type-T probe tolerance** and the **logger's type-T accuracy** (including cold-junction compensation where specified) from the supplier or calibration certificate, and verify that the logger can export on the laboratory PC. Check for safe shaft access only if the group wants shaft-based efficiency; without it, retain the electrical-input efficiency baseline and omit shaft results.
-
-## 13.- Preliminary assessment of measurement uncertainty
+> 🟥 **12-C · Instrumentation to verify.** Confirm availability of the
+> proposed instruments or equivalent laboratory equipment. Obtain the
+> thermocouple tolerance and logger accuracy, and check that the laboratory
+> PC can download and export the recorded data.
+> 
+## 13.- Preliminary assessment of measurement uncertainty (E2)
 
 ### 13.1.- Input specifications
 
@@ -626,7 +673,7 @@ $$
 > [!CAUTION]
 > 🟥 **13-A · Data needed to replace the illustrative example.** Request a **traceable curve for the selected fan at 1,445 rpm**, with its mounting and efficiency definition, if the group has one. Otherwise identify a point from the eventual bench sweep. Keep the example as shown for Release 1. In the full budget, use the actual power analyser range and calibration, add repeatability, pressure-tap effects, nozzle diameter and coefficient, density and outlet-area contributions. Compare the appropriate uncertainty with the limits in the clauses referenced in Section 14. A maximum of electrical-input efficiency must not be reported as a shaft-efficiency BEP without shaft-power data.
 
-## 14.- Preliminary test bench and application of UNE-EN ISO 5801
+## 14.- Preliminary test bench and application of UNE-EN ISO 5801 (E3)
 
 ### 14.1.- Mounting category and reference setups
 
