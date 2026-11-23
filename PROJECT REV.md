@@ -245,7 +245,7 @@ $$
 
 The commercial reference and preliminary theoretical fan have the following principal components. **The blade chord, profile and stagger are design choices, not CAD measurements of a finalized blade.**
 
-**| Component | Description / function | Current dimensions or known data |
+| Component | Description / function |
 |:--|:--|:--|:--|
 | Rotor blades | Six blades impart tangential momentum to the airflow | $Z=6$; $D_t=494$ mm; preliminary mean-radius chord selected in Section 9 |
 | Hub | Connects blade roots to rotating assembly | $D_h=130.5$ mm |
@@ -258,7 +258,7 @@ The commercial reference and preliminary theoretical fan have the following prin
 
 ## 8.- Materials and characteristics. Justification
 
-**[TO COMPLETE BY GROUP]** Material specifications and mechanical/thermal properties are not confirmed in the files supplied. These cells are intentionally blank; they must be completed using the final CAD bill of materials, product information or justified engineering selection.
+Material specifications are listed below according to manufacturing facilities
 
 | Component | Material | manufacturing justification |
 |:--|:--|:--|:--|:--|
@@ -422,7 +422,7 @@ Re_l=\frac{\rho w_1l}{\mu}
 =\boxed{1.07\times10^5}.
 $$
 
-| Quantity | Proposed 57.5 mm chord |**
+| Quantity | Proposed 57.5 mm chord |
 |:--|--:|--:|
 | Blade count $Z$ | 6 |
 | Pitch $s$ (mm) | 163.49 |
