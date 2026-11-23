@@ -423,7 +423,7 @@ Re_l=\frac{\rho w_1l}{\mu}
 $$
 
 | Quantity | Proposed 57.5 mm chord |
-|:--|--:|--:|
+|:--|--:|
 | Blade count $Z$ | 6 |
 | Pitch $s$ (mm) | 163.49 |
 | Chord $l$ (mm) | **57.50** |
