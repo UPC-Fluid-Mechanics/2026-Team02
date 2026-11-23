@@ -494,25 +494,13 @@ This $\alpha_{chord}$ is not necessarily equal to the **metal-angle incidence** 
 
 ## 11.- Computational fluid dynamics (CFD)
 
-*Release 1 sections to be completed by the CFD team:*
-
-- **11.1 CAD description:** identify the geometry used for the numerical model and document the fluid domain and any simplifications.
-- **11.2 Mesh description:** document the preliminary mesh and its main characteristics.
-- **11.3 Boundary conditions:** state the inlet and outlet conditions, wall and blade treatment, and the settings for the preliminary mean-line simulation.
-
-*Design remains in Sections 1–10. The outstanding Design items are listed in Section 10 and remain with the Design team.*
+## 11.1 CAD description
+## 11.2 Mesh description
+## 11.3 Boundary conditions
 
 ## 12.- Experimentation: measurement of magnitudes and data acquisition
 
-The Release 1 experimental plan defines the quantities to measure, instruments and data acquisition (Section 12); the preliminary uncertainty calculation (Section 13); and the application of UNE-EN ISO 5801 to the proposed test arrangement (Section 14). The full uncertainty budget, detailed bench design and user guide are Release 2 work [8].
-
 The proposed test specimen is the complete commercial SODECA fan at its low-speed setting. This configuration is distinct from the theoretical rotor described in Design. The reference speed and flow used below are consistent with Design Sections 2 and 6; the pressure and power estimates in Sections 2–3 are kept as theoretical design inputs. No experimental results are reported in this release.
-
-| Status | Basis used in this release |
-|:--|:--|
-| **Verified from the catalogue** | Both candidate variants, C and LS, list **1,445 rpm**, **9,770 m³/h (2.714 m³/s) maximum airflow**, **13.1 m/s discharge velocity** and **1.30 kW installed motor rating** at low speed [9]. The airflow is used for sizing; it does not establish a bench operating point or a best efficiency point (BEP). |
-| **Reported in Design or CAD** | The STEP header identifies C; Design records Ø494 mm for the rotor, Ø130.5 mm for the hub and Ø514 mm as a geometric outlet measurement. These dimensions describe different sections and cannot be interchanged. The outlet value may be used as an illustrative geometric input; the actual measurement section and area convention remain to be confirmed. |
-| **Calculated for the proposal** | The nozzle pressure signals and chamber ratios are calculated for the stated assumptions. The chamber dimensions, selected instruments and acquisition settings are proposed choices; their availability and as-built performance are not established. |
 
 > [!CAUTION]
 > 🟥 **12-A · Group decision for Release 1: identify the commercial assembly.** Confirm whether the specimen is the **C** variant identified by the STEP header or the **LS-F400** variant named in Design. Obtain the **full ordering code**, the original **QuickFan selection sheet** and the matching **dimensional drawing**. Use these to align the title, Design, CFD and Experimentation and identify the mounting interface. QuickFan is also needed to reconcile the reported **40.55 N** with the **82 N** catalogue entry if thrust is compared. Until then, use the catalogue data common to the two variants [9].
