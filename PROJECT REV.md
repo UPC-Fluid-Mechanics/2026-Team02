@@ -521,42 +521,54 @@ The design estimate of approximately 103 Pa comes from the jet velocity. It is s
 
 ### 12.1.- Flow measurement and preliminary nozzle sizing
 
-The catalogue maximum airflow of **9,770 m³/h (2.714 m³/s)** is used
-as the sizing reference for the flow meter.
+The catalogue maximum airflow of **9,770 m³/h (2.714 m³/s)** is used as
+the sizing reference for the flow meter [9].
 
 | **Flow-measurement option** | **Fit to the proposed test** |
 |:--|:--|
-| ISA 1932 nozzle | Used in the course example. It remains an option if a duct-based bench is selected and the expected pressure loss is acceptable. |
-| Long-radius nozzle | Also an option for a duct-based bench. Its throat diameter and installation would need to be sized for the expected flow and differential pressure. |
-| Rounded-entry chamber nozzles | **Selected for the preliminary bench.** Two identical nozzles in parallel allow one to be closed at lower flow rates to increase the differential-pressure signal. The main drawback is the additional space required for the chamber. |
+| ISA 1932 nozzle | Used in the course example. It remains an option for a duct-based bench if the pressure loss is acceptable. |
+| Long-radius nozzle | Another option for a duct-based bench. Its throat diameter would need to be selected for the expected airflow and pressure differential. |
+| Rounded-entry chamber nozzles | **Selected for the preliminary bench.** Two identical nozzles in parallel allow one to be closed at low airflow to increase the differential-pressure signal. The main drawback is the space required for the chamber. |
 
-The selection is based on the proposed chamber arrangement and the
-expected measurement signal. If the chamber does not fit in the
-laboratory, the duct-based options should be reconsidered [8, 16].
+The choice follows the proposed chamber arrangement in Section 14.
+If the chamber does not fit in the laboratory, the duct-based options
+should be reconsidered [8, 16].
 
-For preliminary sizing, the total open throat area is:
+The flow meter uses the pressure difference across the nozzle bank,
+$\Delta p_n$, to calculate airflow. For sizing, the same relation is
+rearranged to estimate the pressure difference at a given airflow:
 
-$$
-A_n=N_{\mathrm{open}}\frac{\pi d_n^2}{4}.
-$$
-
-The airflow is calculated from the measured nozzle differential
-pressure. For sizing, the same expression is rearranged to estimate the
-differential pressure for a given airflow:
-
-$$
+```math
+A_n=N_{\mathrm{open}}\frac{\pi d_n^2}{4},
+\qquad
 Q\approx C_d A_n\sqrt{\frac{2\Delta p_n}{\rho}},
 \qquad
 \Delta p_n\approx\frac{\rho}{2}
 \left(\frac{Q}{C_d A_n}\right)^2.
-$$
+```
 
-Here, $N_{\mathrm{open}}$ is the number of open nozzles, $d_n$ is the
-throat diameter of each nozzle, $C_d$ is the discharge coefficient and
-$\rho$ is the air density. For two nozzles with $d_n=0.400\ \mathrm{m}$,
-the total open throat area is $A_n=0.2513\ \mathrm{m^2}$. The estimates
-use $\rho=1.20\ \mathrm{kg/m^3}$ and a provisional $C_d=0.985$ from the
-course inlet-chamber example [8].
+Here, $A_n$ is the total open throat area, $N_{\mathrm{open}}$ is the
+number of open nozzles, $d_n$ is the throat diameter of each nozzle,
+$C_d$ is the discharge coefficient and $\rho$ is the air density.
+The preliminary calculation assumes $d_n=0.400\ \mathrm{m}$ and
+$\rho=1.20\ \mathrm{kg/m^3}$. The coefficient $C_d=0.985$ is taken
+from the course inlet-chamber example [8] as a sizing assumption.
+
+**Worked example: two open nozzles at the catalogue reference airflow.**
+
+```math
+Q_{\mathrm{ref}}=\frac{9{,}770}{3{,}600}
+=2.7139\ \mathrm{m^3/s},
+\qquad
+A_n=2\frac{\pi(0.400\ \mathrm{m})^2}{4}
+=0.2513\ \mathrm{m^2}.
+```
+
+```math
+\Delta p_n\approx
+\frac{1.20}{2}\left(\frac{2.7139}{0.985\times0.2513}\right)^2
+=72.1\ \mathrm{Pa}.
+```
 
 | **Reference airflow (m³/h)** | **Open nozzles** | **Estimated nozzle differential (Pa)** |
 |--:|--:|--:|
@@ -564,21 +576,18 @@ course inlet-chamber example [8].
 | 4,885 | 2 | 18.0 |
 | 4,885 | 1 | 72.1 |
 
-At 4,885 m³/h, closing one nozzle increases the estimated signal from
-18.0 Pa to 72.1 Pa **if the flow rate is kept the same**. Since closing
-a nozzle changes the bench resistance, the operating point must be
-readjusted before comparing the two configurations.
+With both nozzles open, halving the airflow reduces the estimated
+differential to one quarter. At 4,885 m³/h, using only one nozzle
+halves the open area and raises the estimated differential back to
+72.1 Pa. Closing a nozzle changes the bench resistance, so the
+operating point must be readjusted to compare both configurations at
+the same airflow.
 
-With both nozzles open, the pressure sensor's basic accuracy limit of
-±1.25 Pa corresponds to a first-order effect on the calculated flow
-of about **±0.9% at 72.1 Pa** and **±3.5% at 18.0 Pa** [10].
-This is the contribution of the pressure reading alone; the wider
-uncertainty assessment is presented in Section 13.
-
-> [!CAUTION]
-> 🟥 **12-B · Nozzle data to verify.** Confirm the actual throat diameters
-> and tolerances, and obtain the discharge coefficient or calibration curve
-> for each selected nozzle. Ø400 mm and $C_d=0.985$ are preliminary inputs.
+The proposed pressure sensor's basic accuracy limit of ±1.25 Pa
+corresponds to a first-order effect on the calculated airflow of about
+**±0.9% at 72.1 Pa** and **±3.5% at 18.0 Pa** [10]. This accounts
+only for the pressure reading; the wider uncertainty assessment is
+presented in Section 13.
 
 ### 12.2.- Selection of digital differential-pressure instruments
 
