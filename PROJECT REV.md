@@ -1,9 +1,5 @@
 # Theoretical design of an axial fan for tunnel ventilation (SODECA THT/IMP-LS-UNI-50-2/4T-6-F400)
 
-> **Project status — Release 1:** This document keeps the existing commercial reference and preliminary background, and develops the four Design requirements in `0_Preliminary/P1_preparing_course.md`: **(1) specifications and dimensionless parameters, (2) component geometry, (3) materials and justification, and (4) mean-line analysis**. Only **1445 rpm** is used for the theoretical aerodynamic design in this release. The commercial high-speed operating point is provided only for reference.
->
-> **[TO VERIFY — MODEL IDENTIFICATION]** The previous document title stated `TJHT/2/4-500-C` (Soler & Palau), while its contents and calculations refer to `SODECA THT/IMP-LS-UNI-50-2/4T-6-F400`. Confirm the reference model against the actual QuickFan output and catalogue before submission.
-
 ## 1.- Dimensions
 
 The reference machine is a unidirectional axial jet fan used for tunnel and car park ventilation. The nominal commercial impeller diameter is 500 mm. Theoretical design calculations use the **dimensions measured in the group's CAD assembly**, rather than replacing those dimensions with the nominal catalogue designation.
@@ -44,7 +40,7 @@ The following geometrical information was provided from CAD measurements:
 | Arithmetic mean radius | $r_m=(r_t+r_h)/2$ | 156.125 mm |
 | Root-mean-square radius | $r_{m,RMS}=\sqrt{(r_t^2+r_h^2)/2}$ | 180.65 mm |
 
-**Assumption G1:** The rotor and hub are represented as concentric circular sections, and local flow blockage by blade thickness is neglected when calculating the preliminary annular passage area.
+**Assumption 1:** The rotor and hub are represented as concentric circular sections, and local flow blockage by blade thickness is neglected when calculating the preliminary annular passage area.
 
 $$
 A=\frac{\pi}{4}(D_t^2-D_h^2)
@@ -59,35 +55,29 @@ A_{out,geom}=\frac{\pi}{4}(0.514)^2
 =\boxed{0.20750\;\mathrm{m^2}}.
 $$
 
-**[TO VERIFY — OUTLET]** The 514 mm measurement has not yet been demonstrated to represent the **unobstructed effective outlet area**. The possible motor/hub blockage, grille and supporting structures must be evaluated before using this as an actual free-flow area.
-
-**Assumption G2:** The *arithmetic* mean radius $r_m=0.156125$ m is used consistently in the Release 1 two-dimensional cascade and velocity triangles. The RMS radius is shown for reference only and is **not mixed** with the numerical results below. A radial design is planned for Release 2.
-
-**[FIGURE REQUIRED — GROUP CAD]** Add a dimensioned front view and side/section view from CAD showing the casing, rotor, hub, inlet/outlet, motor and supports. Identify whether all shown items belong to the original commercial assembly or to the group's theoretical design.
-
 ## 2.- Performance and operating requirements
 
 The commercial reference is the SODECA THT/IMP-LS-UNI-50-2/4T-6-F400, an axial jet fan that supplies momentum to the surrounding air to promote longitudinal ventilation.
 
-The performance data previously entered in the project are:
+The performance data about the fan presented:
 
-| Parameter | High speed (commercial reference) | Low speed (Release 1 design point) |
+**| Parameter | value |**
 |:--|--:|--:|
-| Rotational speed (rpm) | 2915 | **1445** |
-| Volumetric flow rate (m³/h) | 19700 | **9766** |
-| Outlet air velocity (m/s) | 26.4 | **13.09** |
-| Thrust (N) | 165 | **40.55** |
+| Rotational speed (rpm) | **1445** |
+| Volumetric flow rate (m³/h) | **9770** |
+| Outlet air velocity (m/s) | **13.09** |
+| Thrust (N) | **40.55** |
 
-*Table 1. Previously recorded data attributed to SODECA QuickFan. **[TO VERIFY]** Confirm the exact fan variant and export the original QuickFan results, especially the reported thrust (40.55 N at low speed).*
+*Table 1. Previously recorded data attributed to SODECA QuickFan.
 
-**Assumption P1:** For consistency with the group's earlier dimensionless-parameter and blade-design calculations, the **rounded** low-speed inputs $Q=9770\;\mathrm{m^3/h}$ and $v_{jet}=13.1\;\mathrm{m/s}$ are used throughout the analytical model. The catalogue values of 9766 m³/h and 13.09 m/s remain documented above. **[TO VERIFY]** Recalculate all derived quantities together if the group decides to adopt the unrounded source values.
+From the parameters listed above it's possible to calculate the flow rate and the pressure of the model. 
 
 $$
 Q=\frac{9770}{3600}=\boxed{2.713889\;\mathrm{m^3/s}},\qquad
 N=1445\;\mathrm{rpm}.
 $$
 
-**Assumption P2:** The reference air properties are $\rho=1.20\;\mathrm{kg/m^3}$ and $\mu=1.81\times10^{-5}\;\mathrm{Pa\,s}$.
+**Assumption 3:** The reference air properties are $\rho=1.20\;\mathrm{kg/m^3}$ and $\mu=1.81\times10^{-5}\;\mathrm{Pa\,s}$.
 
 The dynamic pressure corresponding to the **nominal outlet jet velocity** is:
 
@@ -97,9 +87,7 @@ p_{d,jet}=\frac12\rho v_{jet}^2
 =\boxed{102.966\;\mathrm{Pa}}.
 $$
 
-**Important distinction:** $p_{d,jet}$ is the *jet dynamic pressure*, not a manufacturer-confirmed total-pressure rise. The real rotor pressure rise $\Delta p_{0,rotor}$ is **not provided** in the available project data.
-
-**Assumption P3 (preliminary pressure model):** Only for the purpose of calculating an initial D1/D2 design point, **$\Delta p_{0,est}=p_{d,jet}=102.966\;\mathrm{Pa}$** is adopted as a provisional idealized rotor total-pressure rise. This equality may be inaccurate because of flow acceleration, swirl, inlet kinetic energy, losses and the exact measurement stations. All pressure-dependent results must therefore be identified as *estimated*.
+**Assumption 4 (preliminary pressure model):** Only for the purpose of calculating an initial D1/D2 design point, **$\Delta p_{0,est}=p_{d,jet}=102.966\;\mathrm{Pa}$** is adopted as a provisional idealized rotor total-pressure rise. 
 
 As a consistency check, the geometric circular outlet area gives:
 
@@ -109,9 +97,9 @@ $$
 =13.079\;\mathrm{m/s}\approx13.1\;\mathrm{m/s}.
 $$
 
-This agreement supports the **geometric area used to report nominal jet velocity**, but does **not** prove that the 514 mm circle is the net free-flow area or validate $\Delta p_{0,est}$.
+This agreement supports the **geometric area used to report nominal jet velocity**.
 
-A generic fan characteristic diagram was included in the original project and is retained below as background:
+Figure 2 illustrates this general concept. It is included as a theoretical reference and does not represent the performance of the selected SODECA fan.
 
 <img width="329" height="297" alt="Generic fan characteristic curves" src="https://github.com/user-attachments/assets/dff147b8-1ce6-42f5-a30b-d37b3cbed890" />
 
@@ -127,7 +115,7 @@ P_{jet}=Q\,p_{d,jet}
 =\boxed{279.44\;\mathrm{W}}.
 $$
 
-**Assumption P4:** The preliminary global jet-power-to-electrical-input efficiency is $\eta_{jet,overall}=0.50$, solely for an illustrative estimate; this is **not** a measured efficiency or a value confirmed by the manufacturer.
+**Assumption 5:** The preliminary global jet-power-to-electrical-input efficiency is $\eta_{jet,overall}=0.50$, solely for an illustrative estimate; this is **not** a measured efficiency or a value confirmed by the manufacturer.
 
 $$
 P_{electrical,est}=\frac{P_{jet}}{\eta_{jet,overall}}
@@ -135,31 +123,34 @@ P_{electrical,est}=\frac{P_{jet}}{\eta_{jet,overall}}
 =\boxed{558.88\;\mathrm{W}\approx0.56\;\mathrm{kW}}.
 $$
 
-**[TO VERIFY]** The earlier report stated a low-speed installed motor rating of 1.30 kW. Confirm this against the correct catalogue/variant. Motor **rated** power, absorbed **shaft** power and actual **electrical input** are distinct. The estimated 0.56 kW must not be presented as a verified measured consumption.
+SODECA stated a low-speed installed motor rating of 1.30 kW. The estimated 0.56 kW must not be presented as a verified measured consumption.
 
-Because provisional $\Delta p_{0,est}=p_{d,jet}$, the idealized hydraulic power $Q\Delta p_{0,est}$ is numerically also 279.44 W. This numerical equality is a consequence of **Assumption P3**, not an independently measured hydraulic performance result.
-
-**[DATA REQUIRED]** Measured or selected rotor total-pressure rise; shaft or electrical absorbed power; motor efficiency; actual global aerodynamic efficiency.
+Because provisional $\Delta p_{0,est}=p_{d,jet}$, the idealized hydraulic power $Q\Delta p_{0,est}$ is numerically also 279.44 W. This numerical equality is a consequence of **Assumption 3**, not an independently measured hydraulic performance result.
 
 ## 4.- Applications
 
-According to the manufacturer, THT/IMP-type axial jet fans are intended to generate high-velocity jets for ventilation and, for appropriately certified variants, smoke-control applications in enclosed spaces such as car parks. This project uses the commercial SODECA fan as a reference for **tunnel longitudinal ventilation**, where the jet transfers momentum to the surrounding air and assists in pollutant dilution and air movement.
+According to the manufacturer, THT/IMP-type axial jet fans are intended to generate high-velocity jets for ventilation and, for appropriately certified variants, smoke-control applications in enclosed spaces such as car parks. This project uses the commercial SODECA fan as a reference for **tunnel longitudinal ventilation**, where the jet transfers momentum to the surrounding air and assists in pollutant dilution and air movement. The model designation used in the project contains **F400**.
 
-The model designation used in the project contains **F400**. **[TO VERIFY]** Confirm the precise fire-performance classification and relevant certificate for the reference product. Any commercial certification must **not** be transferred to the theoretical rotor designed by the group without separate validation.
-
-Reference: [SODECA official website](https://www.sodeca.com). **[SOURCE REQUIRED]** Insert the precise catalogue and certification document URLs/pages used in the final report.
+Reference: [SODECA official website](https://www.sodeca.com). 
 
 ## 5.- Examples of other axial jet fans for tunnel ventilation
 
 These products were selected by the group as commercial comparisons based principally on reported dynamic pressure. Their stated pressure values must not automatically be treated as rotor total-pressure rise.
 
-| Manufacturer and model | Rotational speed (rpm) | Reported pressure (Pa) | Diameter | Airflow (m³/h) |
+| Manufacturer and model | Rotational speed (rpm) | Estimated dynamic pressure (Pa) | Diameter | Airflow (m³/h) |
 |:--|--:|--:|--:|--:|
 | Soler & Palau — TJHT/2/4-500-C | 1440 | 94 | 500 mm | 8800 |
 | Zitrón — JZp 4/H-1,5/0,37-2/4 RE F400 | 2845 | 220 | 400 mm | 8700 |
 | Novovent — JET WINDER 4-560T-4 0.55 kW | 1500 | 78 | 490 mm | 10087 |
 
-**[SOURCE / DEFINITION REQUIRED]** Add a technical datasheet link for each model and confirm whether the stated pressure refers to static, total, or jet dynamic pressure. Rotor blade counts for these reference models are not used as verified inputs unless supported by product documentation. The group has selected **six blades** for its own theoretical rotor.
+References: 
+
+Novovent: https://fnpgroup.es/
+
+Zitrón: https://zitron.com/?lang=es
+
+Novovent: https://www.solerpalau.com/es-es/
+
 
 ## 6.- Dimensionless parameters and position in the Cordier diagram
 
@@ -179,7 +170,7 @@ c_x=\frac{Q}{A}
 =\boxed{15.222\;\mathrm{m/s}}.
 $$
 
-**Assumption F1:** Steady, incompressible flow with uniform mean axial velocity across the rotor annulus; the mean axial speed is assumed unchanged between rotor inlet and outlet ($c_{x1}=c_{x2}=c_x$). This is a one-dimensional simplification, not a measured profile.
+**Assumption 6:** Steady, incompressible flow with uniform mean axial velocity across the rotor annulus; the mean axial speed is assumed unchanged between rotor inlet and outlet ($c_{x1}=c_{x2}=c_x$). This is a one-dimensional simplification, not a measured profile.
 
 ### 6.1.- Flow coefficient
 
@@ -240,7 +231,7 @@ $$
 
 ### 6.6.- Position in the Cordier diagram
 
-Figure 3 is the **group's existing Dixon-and-Hall-style Cordier diagram**, reproduced rather than replaced with a new schematic curve. The horizontal axis is the logarithmic specific diameter $D_s$ and the vertical axis is the logarithmic specific speed $\Omega_s$.
+Figure 3 is the **Dixon-and-Hall-style Cordier diagram**. The horizontal axis is the logarithmic specific diameter $D_s$ and the vertical axis is the logarithmic specific speed $\Omega_s$.
 
 $$
 \boxed{(D_s,\Omega_s)_{1445\,rpm}=(0.9127,\,8.842)}.
@@ -248,53 +239,44 @@ $$
 
 <img width="1448" height="1086" alt="Gráfico de Cordier con punto destacado_edited" src="https://github.com/user-attachments/assets/0069a14b-c0cb-4f1f-90b6-b0e924f753ea" />
 
-*Figure 3. Cordier diagram used by the group, based on Dixon and Hall, Figure 2.8. The **orange low-speed marker** indicates the 1445 rpm condition in the characteristic axial-flow region. The source image also contains an older high-speed marker, which is not part of the present Release 1 design.*
-
-**[FIGURE UPDATE REQUIRED — NUMERICAL CONSISTENCY]** The original screenshot labels the orange marker at $D_s\approx0.9237$, calculated with earlier diameter/reference data, and shows a **2915 rpm** marker. With the **current measured $D_t=494$ mm**, the correct Release 1 value is **$D_s=0.9127$**, $\Omega_s=8.842$. Before final submission, update the label/point on **this same Cordier diagram** and remove or clearly identify the high-speed marker as historical. Do not change the current numerical results to match the outdated plot.
-
-**[IMAGE ACTION REQUIRED]** Upload the supplied `cordier_capture_release1.png` to the repository folder `images/`. If uploaded to a different path, update the relative image reference above.
+*Figure 3. Cordier diagram based on Dixon and Hall. The **orange low-speed marker** indicates the 1445 rpm condition in the characteristic axial-flow region.
 
 ## 7.- Geometry of the axial fan components
 
 The commercial reference and preliminary theoretical fan have the following principal components. **The blade chord, profile and stagger are design choices, not CAD measurements of a finalized blade.**
 
-| Component | Description / function | Current dimensions or known data | Information still required |
+**| Component | Description / function | Current dimensions or known data |
 |:--|:--|:--|:--|
-| Rotor blades | Six blades impart tangential momentum to the airflow | $Z=6$; $D_t=494$ mm; preliminary mean-radius chord selected in Section 9 | Exact NACA section, thickness, camber, twist, tip/root chords |
-| Hub | Connects blade roots to rotating assembly | $D_h=130.5$ mm | Axial length, attachment and structural design |
-| Shaft / rotor coupling | Transmits torque | **[DATA REQUIRED]** | Diameter, couplings, material and motor interface |
-| Casing / duct | Contains flow and supports assembly | Existing commercial dimensions in Section 1 | Internal diameter at blade plane, local wall thickness, tip clearance |
-| Motor | Drives the rotor | Low-speed operation at 1445 rpm | Nameplate, rated/absorbed power and motor geometry |
-| Motor mounting supports | Secure motor inside the structure | Visible in CAD screenshots | Number, dimensions, obstruction and geometry details |
-| Outlet | Delivers jet to surrounding air | Stated diameter 514 mm | True effective flow area and outlet obstruction |
-| Protective grille, deflector and silencers | Safety/noise/jet management where applicable | Present in commercial product description | **[TO VERIFY]** Actual presence in the CAD configuration and dimensions |
-
-**[FIGURE REQUIRED]** Insert at least one annotated CAD front view and one axial/section view. Record clearly the flow direction, hub, blade span, housing, motor and inlet/outlet sections.
-
-**Assumption G3:** The 514 mm exit measurement is treated as a **geometric reference**, not automatically as the net open flow area. A claim of 'no obstruction' should be supported by the actual section used to calculate the flow area.
+| Rotor blades | Six blades impart tangential momentum to the airflow | $Z=6$; $D_t=494$ mm; preliminary mean-radius chord selected in Section 9 |
+| Hub | Connects blade roots to rotating assembly | $D_h=130.5$ mm |
+| Shaft / rotor coupling | Transmits torque | Attached to the hub by elastic coupling |
+| Casing / duct | Contains flow and supports assembly | Existing commercial dimensions in Section 1 |
+| Motor | Drives the rotor | Low-speed operation at 1445 rpm |
+| Motor mounting supports | Secure motor inside the structure | Little structure under the motor attached inside the rube of the fan occupying the less space possible to not obstruct the air flow |
+| Outlet | Delivers jet to surrounding air | Stated diameter 514 mm |
+| Protective grille, deflector and silencers | Safety/noise/jet management where applicable | Present in commercial product description, located in the entrance of the fan |
 
 ## 8.- Materials and characteristics. Justification
 
 **[TO COMPLETE BY GROUP]** Material specifications and mechanical/thermal properties are not confirmed in the files supplied. These cells are intentionally blank; they must be completed using the final CAD bill of materials, product information or justified engineering selection.
 
-| Component | Material / grade | Density | Strength / thermal properties | Selection / manufacturing justification |
+| Component | Material | manufacturing justification |
 |:--|:--|:--|:--|:--|
-| Rotor blades |  |  |  |  |
-| Hub |  |  |  |  |
-| Shaft / coupling |  |  |  |  |
-| Casing |  |  |  |  |
-| Motor supports |  |  |  |  |
-| Protective elements (if present) |  |  |  |  |
-
-**[TO COMPLETE]** Specify environmental conditions, corrosion requirements, operating temperature, expected mechanical loads and manufacturing constraints. The original commercial fan's F400 designation does not establish compliance for the newly designed blade or assembly.
+| Rotor blades | Aluminum | Low | Reduces rotor mass and rotational inertia. Suitable for manufacturing complex aerodynamic blade geometries by casting. |
+| Hub | Aluminum  | Reduces rotating mass while providing a mechanically resistant connection to the shaft. |
+| Shaft / coupling | Steel | Suitable for transmitting motor torque and resisting torsional and fatigue loads. |
+| Casing | S235JR GALVA   | Economical material suitable for sheet-metal forming, welding and structural support. |
+| Motor supports | S235JR GALVA | Suitable for welded or bolted supports connecting the motor assembly to the casing. |
+| Protective elements (if present) | S235JR GALVA | Provides protection against contact with rotating components and foreign objects. It's easy to produce |
+| Motor casing | Aluminum | Most common material for low power motors |
 
 ## 9.- Mean-line analysis and preliminary blade design
 
-This Release 1 analysis follows the D2 notebook and applies the **arithmetic midspan radius** of Section 1. The flow model is steady and two-dimensional. The final airfoil selection and radial design belong to Release 2.
+The flow model is steady and two-dimensional. The final airfoil selection and radial design will be done in Release 2.
 
-**Assumption F2:** The inlet has no pre-swirl: $c_{\theta1}=0$. This is a boundary-condition assumption; the absence of upstream guide vanes does not by itself prove that the real inflow has zero swirl.
+**Assumption 7:** The inlet has no pre-swirl: $c_{\theta1}=0$. This is a boundary-condition assumption; the absence of upstream guide vanes does not by itself prove that the real inflow has zero swirl.
 
-**Assumption F3:** The provisional rotor pressure rise follows **Assumption P3** and the Euler energy-transfer equation is applied ideally, with no losses in the velocity-triangle calculation. This **does not imply a real overall fan efficiency of 100%**.
+**Assumption 8:** The provisional rotor pressure rise follows the Euler energy-transfer equation is applied ideally, with no losses in the velocity-triangle calculation. This **does not imply a real overall fan efficiency of 100%**.
 
 ### 9.1.- Velocity triangles at the mean radius
 
@@ -354,11 +336,10 @@ $$
 | Relative velocity magnitude $w$ (m/s) | 28.104 | 25.128 |
 | Relative flow angle $\beta$ (deg) | 57.206 | 52.716 |
 
-**[FIGURE REQUIRED]** Insert inlet and outlet velocity triangles at $r_m$, specifying the axial/tangential sign convention and the vectors $\mathbf c$, $\mathbf w$ and $\mathbf U$.
 
 ### 9.2.- Blade count, pitch and diffusion criterion
 
-The number of blades is fixed at the group-selected value $Z=6$. At the arithmetic mean radius:
+The number of blades is fixed at $Z=6$. At the arithmetic mean radius:
 
 $$
 s=\frac{2\pi r_m}{Z}
@@ -366,7 +347,7 @@ s=\frac{2\pi r_m}{Z}
 =\boxed{0.163494\;\mathrm{m}=163.49\;\mathrm{mm}}.
 $$
 
-**Assumption B1:** For preliminary dimensioning, the allowable Lieblein diffusion factor is taken as $DF_{max}=0.45$. The D2 example also discusses values around 0.5. The selected design is checked against this conservative 0.45 limit.
+**Assumption 9:** For preliminary dimensioning, the allowable Lieblein diffusion factor is taken as $DF_{max}=0.45$. The D2 example also discusses values around 0.5. The selected design is checked against this conservative 0.45 limit.
 
 $$
 DF=1-\frac{w_2}{w_1}
@@ -392,9 +373,9 @@ This lower bound prevents excessive diffusion in the simplified mean-radius mode
 
 ### 9.3.- Chord selection for the target lift coefficient
 
-**Assumption B2:** A preliminary two-dimensional section drag coefficient $C_D=0.02$ is adopted, following the simplification in D2. Its validity for the actual airfoil at the operating Reynolds number remains to be established.
+**Assumption 10:** A preliminary two-dimensional section drag coefficient $C_D=0.02$ is adopted. Its validity for the actual airfoil at the operating Reynolds number remains to be established.
 
-**Design requirement B3:** The group targets $C_L\approx0.75$ to remain below its preferred approximate upper range of 0.8–0.9. **$C_L=1$ is not the selected target.**
+**Design requirement:**  $C_L\approx0.75$ to remain below its preferred approximate upper range of 0.8–0.9.
 
 The mean-line cascade relation from Dixon and Hall, Equation (3.26a), is:
 
@@ -411,8 +392,6 @@ $$
 =\frac{163.494}{47}=3.479,
 \qquad \boxed{C_{L,47mm}=0.921}.
 $$
-
-After correcting the hub and rotor diameters from CAD, **47 mm no longer meets the chosen target $C_L\approx0.75$** under the stated model.
 
 Solving the lift equation for $C_{L,target}=0.75$:
 
@@ -443,15 +422,15 @@ Re_l=\frac{\rho w_1l}{\mu}
 =\boxed{1.07\times10^5}.
 $$
 
-| Quantity | Previous 47 mm chord | Proposed 57.5 mm chord |
+| Quantity | Proposed 57.5 mm chord |**
 |:--|--:|--:|
-| Blade count $Z$ | 6 | 6 |
-| Pitch $s$ (mm) | 163.49 | 163.49 |
-| Chord $l$ (mm) | 47.00 | **57.50** |
-| Pitch-to-chord $s/l$ | 3.479 | **2.843** |
-| Solidity $l/s$ | 0.287 | **0.352** |
-| Required $C_L$ | 0.921 | **0.748** |
-| Diffusion factor $DF$ | 0.331 | **0.290** |
+| Blade count $Z$ | 6 |
+| Pitch $s$ (mm) | 163.49 |
+| Chord $l$ (mm) | **57.50** |
+| Pitch-to-chord $s/l$ | **2.843** |
+| Solidity $l/s$ | **0.352** |
+| Required $C_L$ | **0.748** |
+| Diffusion factor $DF$ | **0.290** |
 
 The rounded chord satisfies the selected mean-radius $C_L$ target and the diffusion-factor criterion within the adopted theoretical assumptions.
 
@@ -459,7 +438,7 @@ The rounded chord satisfies the selected mean-radius $C_L$ target and the diffus
 
 The calculated **flow angles** are $\beta_1=57.206^\circ$ and $\beta_2=52.716^\circ$. They are derived from the idealized velocity triangles and do **not** define a unique airfoil shape.
 
-**Assumption B4:** The group has considered $\xi=53^\circ$ as a **preliminary chord stagger**, in analogy with the C3 cascade classroom example. The corresponding *chord-referenced* incoming angle is:
+**Assumption 11:** It has been considered $\xi=53^\circ$ as a **preliminary chord stagger**, in analogy with the C3 cascade classroom example. The corresponding *chord-referenced* incoming angle is:
 
 $$
 \alpha_{chord}=\beta_1-\xi
@@ -467,30 +446,6 @@ $$
 =\boxed{4.206^\circ}.
 $$
 
-This $\alpha_{chord}$ is not necessarily equal to the **metal-angle incidence** $i=\beta_1-\beta'_1$, which is measured relative to the inlet camber-line tangent. If the airfoil has camber, $\beta'_1$ generally differs from the chord stagger $\xi$.
-
-**[TO COMPLETE — RELEASE 2]** Select and justify the actual airfoil; determine camber, thickness, inlet/outlet metal angles, spanwise chord and twist; calculate deviation consistently; and check actual lift, drag and exit flow with CFD. The 4.206° chord-referenced angle has **not** been shown to be the optimum CFD angle for the future selected rotor.
-
-## 10.- Release 1 design summary and items requiring group input
-
-| Deliverable or quantity | Status |
-|:--|:--|
-| Commercial reference and nominal dimensions | Retained; **exact variant to verify** |
-| Rotor/hub CAD dimensions, six blades | Recorded |
-| Selected operating condition | **1445 rpm** |
-| Annular area and flow velocity | Calculated from measured diameters |
-| Six dimensionless parameters and Cordier position | Calculated with **estimated** pressure rise |
-| Mean-radius velocity triangles | Calculated with ideal Euler model |
-| Minimum chord based on diffusion | 30.70 mm |
-| Preliminary chord for $C_L\approx0.75$ | **57.5 mm**, giving $C_L\approx0.748$ |
-| Mean-radius diffusion factor | **0.290** |
-| Stagger | **53° provisional**; chord-referenced angle 4.206° |
-| Final airfoil and full 3D blade geometry | **Pending Release 2** |
-| Material grades / mechanical properties / manufacturing | **[TO COMPLETE]** |
-| Rotor total-pressure rise | **[DATA REQUIRED]** |
-| Actual motor/shaft/electrical power and efficiency | **[DATA REQUIRED]** |
-| Updated Cordier plot using current diameter | **[FIGURE UPDATE REQUIRED]** |
-| Labelled CAD views and velocity triangles | **[FIGURES REQUIRED]** |
 
 ## 11.- Computational fluid dynamics (CFD)
 
