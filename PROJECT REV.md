@@ -246,7 +246,7 @@ $$
 \boxed{(D_s,\Omega_s)_{1445\,rpm}=(0.9127,\,8.842)}.
 $$
 
-![Cordier diagram showing the group low-speed and historic high-speed labels](images/cordier_capture_release1.png)
+<img width="1448" height="1086" alt="Gráfico de Cordier con punto destacado_edited" src="https://github.com/user-attachments/assets/0069a14b-c0cb-4f1f-90b6-b0e924f753ea" />
 
 *Figure 3. Cordier diagram used by the group, based on Dixon and Hall, Figure 2.8. The **orange low-speed marker** indicates the 1445 rpm condition in the characteristic axial-flow region. The source image also contains an older high-speed marker, which is not part of the present Release 1 design.*
 
