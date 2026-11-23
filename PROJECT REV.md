@@ -500,10 +500,14 @@ This $\alpha_{chord}$ is not necessarily equal to the **metal-angle incidence** 
 
 ## 12.- Experimentation: measurement of magnitudes and data acquisition
 
-The proposed test specimen is the complete commercial SODECA fan at its low-speed setting. This configuration is distinct from the theoretical rotor described in Design. The reference speed and flow used below are consistent with Design Sections 2 and 6; the pressure and power estimates in Sections 2–3 are kept as theoretical design inputs. No experimental results are reported in this release.
+## 12.- Experimentation: measurement of magnitudes and data acquisition
 
-> [!CAUTION]
-> 🟥 **12-A · Group decision for Release 1: identify the commercial assembly.** Confirm whether the specimen is the **C** variant identified by the STEP header or the **LS-F400** variant named in Design. Obtain the **full ordering code**, the original **QuickFan selection sheet** and the matching **dimensional drawing**. Use these to align the title, Design, CFD and Experimentation and identify the mounting interface. QuickFan is also needed to reconcile the reported **40.55 N** with the **82 N** catalogue entry if thrust is compared. Until then, use the catalogue data common to the two variants [9].
+The selected test specimen is the complete commercial SODECA **THT/IMP-C-UNI-50-2/4T-6**, corresponding to the STEP model selected by the group. The proposed test will use the low-speed setting of **1,445 rpm**. The catalogue maximum airflow of **9,770 m³/h (2.714 m³/s)** is used as a reference to size the flow meter [9].
+The actual airflow will be measured on the test bench.
+
+The commercial fan is distinct from the theoretical rotor described in Design. The pressure and power estimates in Sections 2–3 are theoretical inputs. No experimental results are reported in this release.
+
+The STEP cross-section shows an internal diameter of **514 mm** at bothends. The chamber will be connected to the motor-side inlet, as shown in Section 14.2. The mounting plate and fastening details remain to be defined.
 
 | Quantity | Proposed measurement or calculation | Purpose |
 |:--|:--|:--|
