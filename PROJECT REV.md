@@ -513,6 +513,10 @@ The $x$ direction represents the axial direction of the fan and the $y$ directio
 
 The resulting CAD therefore represents a simplified mean-radius cascade and does not include the hub, casing, blade radial variation, tip clearance or the complete three-dimensional rotor.
 
+<img width="1000" alt="Preliminary NACA 65(1)-212 airfoil geometry" src="images/CFD/CFD_geometry.png" />
+
+*Figure 4. Preliminary NACA 65(1)-212 airfoil geometry used in the two-dimensional cascade model in SimScale.*
+
 ## 11.2 Mesh description
 
 A **Hex-dominant parametric mesh** was used following the C3 numerical methodology.
