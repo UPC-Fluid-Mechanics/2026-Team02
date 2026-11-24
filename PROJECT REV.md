@@ -449,9 +449,164 @@ $$
 
 ## 11.- Computational fluid dynamics (CFD)
 
+The CFD work presented in this release corresponds to a **preliminary two-dimensional cascade simulation** based on the methodology developed in the C3 course notebook. Its purpose at this stage is to define and test the CAD preparation, mesh strategy and boundary conditions required for the numerical analysis.
+
+**Assumption 12 (preliminary CFD iteration):** The CFD model was generated before the rotor dimensions were updated using the measurements obtained from the group's CAD assembly. Consequently, the simulation corresponds to an earlier mean-line design iteration and must not be interpreted as a numerical validation of the current geometry defined in Section 9.
+
+The main differences are summarised below:
+
+| Parameter | Preliminary CFD case | Current design, Section 9 |
+|:--|--:|--:|
+| Mean radius $r_m$ (mm) | 187.50 | 156.125 |
+| Blade pitch $s$ (mm) | 196.35 | 163.49 |
+| Blade chord $l$ (mm) | 47.0 | 57.5 |
+| Blade count $Z$ | 6 | 6 |
+| Rotational speed $N$ (rpm) | 1445 | 1445 |
+
+The CFD geometry and operating conditions will therefore be updated in Release 2 once the blade geometry and radial design have been established.
+
 ## 11.1 CAD description
+
+The preliminary numerical model represents a single blade passage of the rotor at the mean radius. Periodic boundaries are used in the pitchwise direction so that only one blade section has to be simulated.
+
+The airfoil used in this preliminary model is a **NACA 65(1)-212** profile. This profile is adopted as a numerical reference because it is the profile used in the C3 cascade exercise. It is **not assumed to be the actual SODECA blade profile or the final profile of the designed rotor**.
+
+The geometry was obtained by modifying the original C3 airfoil model in SimScale. The original profile was first scaled to a chord of 60 mm and rotated to the $50^\circ$ stagger angle used in the classroom example. For the project simulation, an additional scale factor was applied:
+
+$$
+\frac{47}{60}=0.7833,
+$$
+
+resulting in a preliminary chord:
+
+$$
+l=\boxed{47\ \mathrm{mm}}.
+$$
+
+An additional rotation of $3^\circ$ was applied around the $z$ axis, resulting in a total preliminary stagger angle:
+
+$$
+\xi=50^\circ+3^\circ=\boxed{53^\circ}.
+$$
+
+For this iteration, the blade pitch was:
+
+$$
+s=\boxed{196.35\ \mathrm{mm}},
+$$
+
+and therefore:
+
+$$
+\frac{s}{l}=\frac{196.35}{47}
+=\boxed{4.18}.
+$$
+
+The pitchwise limits of the computational domain were consequently placed at:
+
+$$
+y=\pm\frac{s}{2}
+=\boxed{\pm0.098175\ \mathrm{m}}.
+$$
+
+The $x$ direction represents the axial direction of the fan and the $y$ direction represents the tangential direction of the cascade. The domain is treated as a quasi-two-dimensional blade passage following the approach of the C3 exercise.
+
+The resulting CAD therefore represents a simplified mean-radius cascade and does not include the hub, casing, blade radial variation, tip clearance or the complete three-dimensional rotor.
+
 ## 11.2 Mesh description
+
+A **Hex-dominant parametric mesh** was used following the C3 numerical methodology.
+
+The background computational domain was defined by the following limits:
+
+| Coordinate | Minimum (m) | Maximum (m) |
+|:--|--:|--:|
+| $x$ | -0.300 | 0.900 |
+| $y$ | -0.098175 | 0.098175 |
+| $z$ | 0 | 0.060 |
+
+The main background mesh discretisation was:
+
+$$
+\boxed{100\times10\times1}.
+$$
+
+Only one cell is used in the $z$ direction because the objective of this simulation is to approximate the flow through a two-dimensional cascade section.
+
+A local refinement region was introduced around the airfoil and its near wake. The refinement box extends from:
+
+$$
+(-0.05,-0.098175,0)
+$$
+
+to:
+
+$$
+(0.15,0.098175,0.06)\;\mathrm{m}.
+$$
+
+A **refinement level of 2** was assigned to this region.
+
+A boundary-layer mesh was also applied to the airfoil surface. The settings used were:
+
+| Boundary-layer parameter | Value |
+|:--|--:|
+| Number of layers | 2 |
+| Expansion ratio | 1.2 |
+| Final layer thickness | 0.5 |
+| Minimum thickness | 0.01 |
+
+These settings follow the preliminary meshing strategy introduced in C3. The mesh is refined close to the blade and in the wake, where the largest velocity gradients are expected.
+
+No formal grid-convergence or GCI analysis is performed in this preliminary Release 1 model. According to the project structure, the detailed mesh verification and GCI assessment will be addressed in Release 2.
+
 ## 11.3 Boundary conditions
+
+Air was assigned as the working fluid and the flow was modelled as incompressible.
+
+The inlet boundary condition corresponds to the velocity triangle used in the preliminary CFD iteration. The imposed relative velocity components were:
+
+$$
+\mathbf{w}_1=
+(18.429,\ 28.373,\ 0)
+\;\mathrm{m/s}.
+$$
+
+Therefore, the relative inlet flow angle was:
+
+$$
+\beta_1=
+\tan^{-1}\left(
+\frac{28.373}{18.429}
+\right)
+=\boxed{56.995^\circ}.
+$$
+
+Considering the preliminary stagger angle $\xi=53^\circ$, the corresponding chord-referenced incidence in this numerical case is:
+
+$$
+i_{CFD}=\beta_1-\xi
+=56.995^\circ-53^\circ
+=\boxed{3.995^\circ\approx4^\circ}.
+$$
+
+This incidence corresponds specifically to the **preliminary CFD case** and must not be interpreted as the definitive design incidence of the final blade profile.
+
+The boundary conditions applied in SimScale were:
+
+| Boundary | Type | Condition |
+|:--|:--|:--|
+| Minimum $x$ | Velocity inlet | $\mathbf{w}_1=(18.429,\ 28.373,\ 0)$ m/s |
+| Maximum $x$ | Pressure outlet | Static pressure $p=0$ Pa |
+| Minimum and maximum $y$ | Periodic | Repetition of the neighbouring blade passages |
+| Airfoil surface | Wall | No-slip wall with turbulence wall function |
+| Minimum and maximum $z$ | Symmetry | Quasi-two-dimensional approximation |
+
+The periodic boundaries reproduce an infinite cascade with the specified blade pitch, while the symmetry conditions suppress the intended spanwise variation of the preliminary two-dimensional model.
+
+A force-and-moment result control was applied to the same airfoil wall surface used in the wall boundary condition. This allows the aerodynamic forces acting on the blade section to be monitored during the calculation.
+
+The configuration presented here documents the numerical methodology used in Release 1. Since the theoretical design was subsequently updated using the measured CAD rotor dimensions, the pitch, chord and inlet velocity components of this CFD case will be revised before using CFD results for the definitive rotor assessment.
 
 ## 12.- Experimentation: measurement of magnitudes and data acquisition (E1)
 
