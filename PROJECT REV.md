@@ -564,6 +564,10 @@ These settings follow the preliminary meshing strategy introduced in C3. The mes
 
 No formal grid-convergence or GCI analysis is performed in this preliminary Release 1 model. According to the project structure, the detailed mesh verification and GCI assessment will be addressed in Release 2.
 
+<img width="1000" alt="Computational mesh with local refinement around the airfoil" src="images/CFD/mesh_refinement.png" />
+
+*Figure 5. Computational mesh of the two-dimensional cascade domain, showing the local refinement region around the airfoil.*
+
 ## 11.3 Boundary conditions
 
 Air was assigned as the working fluid and the flow was modelled as incompressible.
