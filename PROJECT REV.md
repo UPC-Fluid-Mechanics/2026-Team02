@@ -1030,7 +1030,7 @@ For the Furness FCO560, at half the reference airflow with both nozzles open:
 $$
 e_r=
 \frac{0.001(34.7)+0.03}{34.7}
-\times100
+\times 100
 =\boxed{0.19\%}
 $$
 
