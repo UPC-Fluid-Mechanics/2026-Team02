@@ -1025,16 +1025,16 @@ e_r=\frac{e_{\mathrm{abs}}}{|\Delta p|}
 \times100
 $$
 
+
 For the Furness FCO560, at half the reference airflow with both nozzles open:
 
 $$
-e_r=
-\frac{0.001(34.7)+0.03}{34.7}
-\times 100
-=\boxed{0.19\%}
+e_r=\frac{0.001(34.7)+0.03}{34.7}\times100=\boxed{0.19}
 $$
 
-The WIKA and Keller instruments present higher relative errors at low differential pressures. Therefore, two **Furness Controls FCO560 precision digital manometers, 2 kPa version**, are selected.
+The relative basic instrument error is 0.19%.
+
+The WIKA and Keller instruments present higher relative errors at low differential pressures. Therefore, two **Furness Controls FCO560 precision digital manometers, 2 kPa version, are selected.**
 
 ![Furness Controls FCO560](images/Experimentation/FCO560.png)
 
