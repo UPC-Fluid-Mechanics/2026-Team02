@@ -1674,12 +1674,85 @@ Since shaft torque is not directly measured, the maximum measured electrical-inp
 
 The proposed procedure defines the experimental methodology for Release 1. Actual characteristic curves will require experimental measurements.
 
+
 ## 15.- References
 
-1. UPC course repository: `0_Preliminary/P1_preparing_course.md` — *Quality criteria*, Design, Release 1.
-2. UPC course repository: `1_Design/D1_fundamentals_and_dimensional_analysis.ipynb` — dimensional coefficients and Cordier analysis. **[TO VERIFY]** Confirm exact notebook filename if the repository has been updated.
-3. UPC course repository: `1_Design/D2_mean_line_analysis_and_2d_cascade.ipynb` — velocity triangles, Lieblein diffusion factor, pitch/chord and lift coefficient.
-4. UPC course repository: `2_CFD/C3_aerodynamics_of_2D_cascade.ipynb` — illustrative chord-angle/stagger setup; **not** a validated optimum for this rotor.
-5. Dixon, S. L. and Hall, C. A., *Fluid Mechanics and Thermodynamics of Turbomachinery*, Chapters 2, 3 and 5.
-6. SODECA THT/IMP technical catalogue and QuickFan selection tool. **[TO COMPLETE]** Exact catalogue document/edition, model variant, original output and page numbers.
-7. Measurements of the group's CAD assembly: $D_t=494$ mm, $D_h=130.5$ mm, $D_{out}=514$ mm and $Z=6$. **[TO COMPLETE]** CAD filename and revision.
+[1] UPC. P1 — Preparing the course. Advanced Fluid Dynamic Design.
+
+[2] UPC. D1 — Fundamentals and dimensional analysis.
+
+[3] UPC. D2 — Mean-line analysis and 2D cascade.
+
+[4] UPC. C3 — Aerodynamics of 2D cascade.
+
+[5] Dixon, S. L. and Hall, C. A. *Fluid Mechanics and Thermodynamics of Turbomachinery*, Chapters 2, 3 and 5.
+
+[6] SODECA. THT/IMP technical catalogue and QuickFan selection tool.
+https://www.sodeca.com/
+
+[7] Geometrical measurements of the group's SolidWorks CAD assembly.
+
+[8] UPC. E3 — UNE-EN ISO 5801:2019. Fans performance testing using standardized airways.
+
+[9] SODECA. Technical catalogue CT03 — THT/IMP-C-UNI-50-2/4T-6.
+https://www.sodeca.com/files/catalogs/es/SODECA_CT03_SOLUCIONES_PARA_LA_EVACUACION_DE_HUMOS_ES.pdf
+
+[10] WIKA. A2G-500 differential pressure sensor. Data sheet PE 88.05.
+https://www.wika.com/en-en/a2g_500.WIKA
+
+[11] UPC. E1 — Measurement of magnitudes and E2 — Uncertainty Management.
+https://github.com/UPC-Fluid-Mechanics/AdvancedFluidDynamicDesign-AxialFan
+
+[12] Testo. Testo 622 — Thermohygrometer.
+https://www.testo.com/en-UK/testo-622/p/0560-6220
+
+[13] Testo. Testo 465 — Optical tachometer.
+https://www.testo.com/es-ES/tacometro-testo-465/p/0563-0465
+
+[14] HIOKI. PW3337 — Three-phase power meter.
+https://www.hioki.com/euro-en/products/power-meters/3phase-ac-dc/id_5929
+
+[15] ISO 13350:2015. *Fans — Performance testing of jet fans.*
+https://www.iso.org/standard/62033.html
+
+[16] ANSI/AMCA 210-25 / ASHRAE 51-25. *Laboratory Methods of Testing Fans for Certified Aerodynamic Performance Rating.*
+https://www.amca.org/
+
+[17] UNE-EN ISO 5801:2019. *Fans — Performance testing using standardized airways.*
+https://www.iso.org/standard/56517.html
+
+[18] Furness Controls. FCO560 — Technical data sheet.
+https://www.furness.com/media/FCO560_English.pdf
+
+[19] Keller Pressure. PD-41X — Differential pressure transmitters.
+https://keller-pressure.com/en/products/pressure-transmitters/differential-pressure-transmitters/series-pd-41x
+
+[20] TC Direct. Type T mineral-insulated thermocouple, reference 405-388.
+https://www.tcdirect.es/
+
+[21] TC Direct. Four-channel temperature data logger, reference 753-652.
+https://www.tcdirect.es/
+
+[22] HIOKI. GENNECT ONE SF4000 — Data acquisition software.
+https://www.hioki.com/
+
+[23] Vaisala. BAROCAP PTB330 digital barometer — Technical specifications.
+https://docs.vaisala.com/r/M210855EN-G/en-US/GUID-0A761DB8-D737-455F-B497-15DDB047E696
+
+[24] UNE-EN ISO 5801:2019/A1:2025.
+https://www.iso.org/standard/88365.html
+
+[25] EP Ehrler Prüftechnik Engineering. Blower Test Bench BTB15,000.
+https://www.ep-e.com/en/products/blower-test-bench-btb15000/
+
+[26] Steenkamp, G., Meyer, C. and Van der Spuy, J. (2022). *Reynolds Number Scaling of Axial Flow Fans*. FAN 2022, Senlis, France.
+https://www.fan2025.org/archives/fan2022/papers/fp-pdf-92-VENTER.pdf
+
+[27] UNE-ISO 5168:2006. *Measurement of fluid flow — Procedures for the evaluation of uncertainties.*
+https://www.iso.org/standard/32199.html
+
+[28] JCGM 100:2008. *Evaluation of measurement data — Guide to the expression of uncertainty in measurement (GUM).*
+https://www.iso.org/sites/JCGM/GUM/JCGM100/C045315e-html/C045315e.html?csnumber=50461
+
+[29] Python uncertainties package — Documentation.
+https://pythonhosted.org/uncertainties/
