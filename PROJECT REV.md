@@ -639,6 +639,8 @@ The reference parameters adopted from Sections 1–3 are:
 | Nominal motor rating | $P_{nom}$ | 1.30 kW |
 | Estimated electrical input power | $P_{el,est}$ | 558.88 W |
 
+*Table 14. Reference fan parameters.*
+
 These parameters are used as preliminary inputs for the selection of the measuring instruments and the sizing of the test bench.
 
 The commercial test specimen is distinct from the theoretical rotor described in Design. Furthermore, the preliminary CFD model described in Section 11 corresponds to an earlier design iteration. A direct comparison between experimental, theoretical and numerical results will therefore require consistent geometries, operating conditions and pressure definitions.
@@ -655,6 +657,8 @@ The following magnitudes are considered relevant for the experimental characteri
 | Relative humidity, $RH$ (%) | Digital hygrometer. | Improve air density estimation. |
 | Electrical active input power, $P_{\mathrm{el}}$ (W) | Three-phase power analyser connected to the test fan supply, excluding the auxiliary fan. | Determine actual electrical consumption. |
 | Shaft torque, $M$ (N·m), if accessible | Torque sensor, provided that its installation does not modify the test configuration. | Determine mechanical shaft power. |
+
+*Table 15. Experimental quantities and measurement methods.*
 
 From these measurements, the air power can be estimated at low pressure rise:
 
@@ -685,9 +689,11 @@ The estimated jet dynamic pressure of approximately 103 Pa must not be interpret
 
 According to the group's CAD measurements, the STEP cross-section indicates an internal diameter of 514 mm at both ends.
 
-The intended airflow direction through the commercial fan is shown in Figure X. The proposed test chamber will be connected to the upstream end of the fan. The mounting plate, sealing system and structural supports will be defined in Section 14.2.
+The intended airflow direction through the commercial fan is shown in Figure 6. The proposed test chamber will be connected to the upstream end of the fan. The mounting plate, sealing system and structural supports will be defined in Section 14.2.
 
-*Figure X. Cross-sectional view of the SODECA axial jet fan, indicating the intended airflow direction.
+![SODECA cross-section](images/Experimentation/SODECA_cross_section.png)
+
+*Figure 6. SODECA longitudinal section and intended airflow. Source: group's CAD model.*
 
 ### 12.1.- Flow measurement and preliminary nozzle sizing
 
@@ -700,9 +706,9 @@ Considering the relatively high airflow and low pressure levels expected for thi
 | ISA 1932 nozzle | Standard nozzle installed inside a duct. | Used in the E1 course example. Its suitability depends on the duct dimensions and available pressure budget. |
 | Long-radius nozzle | Nozzle with a progressive inlet contraction. | Alternative for a duct-based test bench, requiring appropriate sizing and installation conditions. |
 | Bellmouth inlet | Rounded inlet drawing air from free space. | Alternative for a free-inlet configuration. |
-| Elliptical-entry chamber nozzles | Multiple nozzles installed in parallel inside a chamber. | Selected for the proposed test bench because the open flow area can be adapted to different airflow ranges. |
+| Elliptical-entry chamber nozzles | Multiple nozzles installed in parallel inside a chamber. | Selected for the proposed test bench because the total throat area can be sized for the reference airflow. |
 
-*Table X. Comparison of differential-pressure flow measurement devices for the selected axial fan.*
+*Table 16. Flowmeter comparison.*
 
 Following the inlet-chamber configuration introduced in the E3 course notebook [8] and UNE-EN ISO 5801:2019, Annex A.4 [17], a system of **two identical elliptical-entry nozzles installed in parallel** is proposed.
 
@@ -710,13 +716,13 @@ The nozzles are independent components of the experimental test bench and are lo
 
 The airflow passes through the nozzle bank, where a differential-pressure transmitter measures the pressure difference required to calculate the airflow.
 
-Both nozzles will remain open at high airflow rates. At lower airflow rates, one nozzle may be closed using a blanking plate to increase the differential-pressure signal.
+Both nozzles will remain open simultaneously throughout the proposed experimental tests to maintain a symmetrical airflow distribution, according to the 2025 amendment of ISO 5801 [24].
 
-The preliminary flow measurement arrangement is illustrated in Figure X.
+The preliminary flow measurement arrangement is illustrated in Figure 7.
 
 ![Preliminary airflow measurement arrangement](images/Experimentation/flow_measurement_system.png)
 
-*Figure X. Preliminary flow measurement arrangement showing the auxiliary fan, two parallel elliptical-entry nozzles, differential-pressure measurement, settling screens and the selected SODECA fan. Source: own elaboration. Conceptual sketch, not to scale.*
+*Figure 7. Airflow measurement arrangement. Source: own elaboration.*
 
 The main disadvantages of this configuration are the space required for the test chamber and the additional flow resistance. These aspects, together with the auxiliary fan requirements, will be considered in the test bench design described in Section 14.
 
@@ -761,7 +767,7 @@ Therefore, a preliminary throat diameter of **340 mm** is selected.
 | Dynamic viscosity | $\mu$ | $1.81\times10^{-5}$ Pa·s |
 | Minimum reference nozzle velocity | $v_{\min}$ | 14 m/s |
 
-*Table X. Reference parameters adopted for the preliminary nozzle sizing.*
+*Table 17. Nozzle sizing parameters.*
 
 The air density and dynamic viscosity are consistent with the reference air properties adopted in Section 2.
 
@@ -831,13 +837,13 @@ The proposed geometrical specifications are summarized below.
 | Outlet edge | Geometry requirement | Square, sharp and free from burrs |
 | Proposed material | Preliminary selection | Machined aluminium |
 
-*Table X. Proposed nozzle geometry, dimensional requirements and material selection.*
+*Table 18. Nozzle geometry and material.*
 
-The main nozzle dimensions are illustrated in Figure X.
+The main nozzle dimensions are illustrated in Figure 8.
 
 ![Preliminary nozzle cross-section](images/Experimentation/nozzle_cross_section.png)
 
-*Figure X. Conceptual longitudinal cross-section of the proposed elliptical-entry nozzle, indicating the throat diameter and length. Source: own elaboration. Not a manufacturing drawing.*
+*Figure 8. Elliptical-entry nozzle cross-section. Source: own elaboration.*
 
 Machined aluminium is proposed because of its corrosion resistance, machinability and suitability for producing a smooth internal surface.
 
@@ -924,24 +930,16 @@ $$
 \boxed{\Delta p_n\approx137.6\;\mathrm{Pa}}
 $$
 
-Different operating conditions are considered to evaluate the flexibility of the proposed nozzle arrangement.
+Different operating conditions are considered to evaluate the pressure signal with both nozzles open.
 
 | Airflow (m³/h) | Open nozzles | Approximate Reynolds number | Estimated $C_d$ | Estimated differential pressure (Pa) |
 |--:|--:|--:|--:|--:|
 | 9,770 | 2 | 336,900 | 0.98693 | 137.6 |
 | 4,885 | 2 | 168,450 | 0.98233 | 34.7 |
-| 4,885 | 1 | 336,900 | 0.98693 | 137.6 |
-| 9,770 | 1 | 673,800 | 0.99026 | 546.7 |
 
-*Table X. Estimated Reynolds numbers, discharge coefficients and differential pressures for different airflow rates and nozzle configurations.*
+*Table 19. Estimated nozzle differential pressures.*
 
-At half the reference airflow, closing one nozzle increases the estimated differential pressure from 34.7 Pa to 137.6 Pa, provided that the same airflow is maintained.
-
-This increases the measurement signal and reduces the relative influence of a fixed absolute pressure measurement error.
-
-Closing one nozzle modifies the resistance of the test bench. Consequently, the operating point must be readjusted before comparing both configurations.
-
-Operation with only one nozzle at the maximum reference airflow is not intended because the resulting differential pressure would be unnecessarily high.
+At half the reference airflow, the estimated nozzle differential pressure is 34.7 Pa. The minimum usable airflow will depend on the pressure measurement uncertainty and the calibrated nozzle operating range.
 
 The expected differential pressures will be used to select the pressure measurement instruments in Section 12.2.
 
@@ -976,7 +974,7 @@ $$
 
 At the reference operating point, the estimated nozzle Reynolds number is also above 12,000.
 
-ISO 5801, Annex A.4.5, provides a discharge coefficient uncertainty of ±1.2% above this Reynolds number threshold [17]. This contribution will be considered in the uncertainty assessment presented in Section 13.
+ISO 5801, Annex A.4.5, provides a discharge coefficient uncertainty of ±1.2% above this Reynolds number threshold [17]. Section 13 adopts a tighter expanded uncertainty target of 0.6% for the calibrated nozzle coefficient. This target must be demonstrated by calibration; it is not a confirmed performance specification.
 
 The actual airflow calculation will use the measured nozzle dimensions, air properties and differential pressure, together with the applicable standard corrections.
 
@@ -995,7 +993,7 @@ Two independent differential-pressure measurement channels are required for the 
 | 1 | Nozzle differential pressure, $\Delta p_n$ | Airflow determination |
 | 2 | Chamber gauge pressure, $p_{\mathrm{ch},g}$ | Fan pressure characterization |
 
-*Table X. Pressure measurement requirements for the experimental test bench.*
+*Table 20. Pressure measurement channels.*
 
 According to the nozzle calculations presented in Section 12.1, the expected differential pressure at the reference airflow of 9,770 m³/h is approximately 137.6 Pa, decreasing to 34.7 Pa at half the reference airflow with both nozzles open.
 
@@ -1014,9 +1012,9 @@ Following the recommendations of the E1 course notebook, the WIKA and Keller cat
 | Relative error at 10 Pa | 12.50% | 30.00% | 0.40% |
 | Communication | RS-485 | RS-485 | USB / RS-232 |
 
-*Table X. Comparison of differential-pressure instruments based on manufacturer specifications under reference conditions.*
+*Table 21. Differential-pressure instrument comparison.*
 
-ISO 5801 [17] establishes a pressure measurement uncertainty criterion of 1.4% for the airflow measurement device.
+ISO 5801, Table 12 [17, 24], provides reference expanded uncertainty limits for pressure measurements. The complete measurement uncertainty will be evaluated in Section 13.
 
 The relative basic instrument error is estimated as:
 
@@ -1036,9 +1034,9 @@ The relative basic instrument error is 0.19%.
 
 The WIKA and Keller instruments present higher relative errors at low differential pressures. Therefore, two **Furness Controls FCO560 precision digital manometers, 2 kPa version, are selected.**
 
-![Furness Controls FCO560](images/Experimentation/FCO560.png)
+![Furness Controls FCO560](images/Experimentation/FCO560.webp)
 
-*Figure X. Furness Controls FCO560 digital precision manometer. Source: Furness Controls [18].*
+*Figure 9. Furness Controls FCO560 [18].*
 
 The main characteristics of the selected instruments are:
 
@@ -1053,7 +1051,7 @@ The main characteristics of the selected instruments are:
 | Communication | USB |
 | Operating temperature | 5–45 °C |
 
-*Table X. Main technical specifications of the selected differential-pressure instruments.*
+*Table 22. Selected differential-pressure instruments.*
 
 Although the Furness instrument is more specialized and potentially more expensive, its higher accuracy at low differential pressures makes it more suitable for the proposed experimental application.
 
@@ -1063,11 +1061,11 @@ The complete measurement uncertainty will be evaluated in Section 13.
 
 #### 12.2.3.- Instrument installation
 
-The proposed pressure measurement arrangement is illustrated in Figure X.
+The proposed pressure measurement arrangement is illustrated in Figure 10.
 
 ![Differential-pressure measurement arrangement](images/Experimentation/pressure_measurement_system.png)
 
-*Figure X. Conceptual arrangement of the two Furness Controls FCO560 differential-pressure measurement channels. Source: own elaboration. Not to scale.*
+*Figure 10. Differential-pressure measurement arrangement. Source: own elaboration.*
 
 **Channel 1 — Nozzle differential pressure**
 
@@ -1090,6 +1088,8 @@ $$
 This measurement is used to determine the fan pressure characteristics according to the test configuration described in Section 14.
 
 Both instruments will be connected to the data acquisition computer through USB interfaces.
+
+Static pressure taps will be drilled perpendicular to the chamber walls, with flush, burr-free openings to minimize measurement disturbances. Their arrangement is specified in Section 14.2.
 
 Before testing, the instruments will be zeroed, their calibration status will be checked and the pressure connections will be inspected for leakage.
 
@@ -1137,15 +1137,15 @@ The main characteristics of the selected instruments are presented below [20, 21
 | Selected recording interval | — | 1 s |
 | Communication | Miniature connector | USB |
 
-*Table X. Technical specifications of the selected thermocouples and temperature data logger.*
+*Table 23. Thermocouples and data logger.*
 
 ![Selected Type T thermocouple](images/Experimentation/TC405388.png)
 
-*Figure X. TC Direct 405-388 mineral-insulated Type T thermocouple. Source: TC Direct [20].*
+*Figure 11. TC Direct 405-388 Type T thermocouple [20].*
 
 ![Selected temperature data logger](images/Experimentation/TC753652.png)
 
-*Figure X. TC Direct 753-652 four-channel temperature data logger. Source: TC Direct [21].*
+*Figure 12. TC Direct 753-652 data logger [21].*
 
 #### 12.3.2.- Installation and temperature recording
 
@@ -1172,14 +1172,15 @@ The following instruments are selected based on the expected operating condition
 
 | Instrument | Measured quantity | Main specifications |
 |:--|:--|:--|
-| Testo 622 [12] | Atmospheric pressure and relative humidity | Pressure range: 300–1,200 hPa; accuracy: ±(3 hPa + 1 digit). Relative humidity range: 0–100%; accuracy: ±(2 percentage points + 1 digit) at 25 °C and 10–90% RH. |
+| Vaisala PTB330, Class A [23] | Atmospheric pressure | Total accuracy: ±0.15 hPa; long-term stability: ±0.10 hPa/year. |
+| Testo 622 [12] | Relative humidity | Range: 0–100% RH; accuracy: ±(2 percentage points + 1 digit) at 25 °C and 10–90% RH. |
 | WIKA A2G-500 [10] | Upstream nozzle gauge pressure | ±2,500 Pa hardware version; configured range: ±1,000 Pa; basic accuracy: ±12.5 Pa at 23 °C; Modbus RTU. |
-| Testo 465 [13] | Rotational speed | Range: 1–99,999 rpm; accuracy: ±0.02% of reading; resolution: 1 rpm at the reference speed. |
+| Testo 465 [13] | Rotational speed | Range: 1–99,999 rpm; accuracy: ±(0.02% of reading + 1 digit); resolution: 1 rpm at the reference speed. |
 | HIOKI PW3337 [14] | Three-phase active electrical power | Three measurement channels; maximum direct inputs: 1,000 V and 65 A; LAN communication. |
 
-*Table X. Complementary instrumentation selected for the experimental test bench.*
+*Table 24. Complementary instrumentation.*
 
-The Testo 622 will be installed in a representative laboratory location, away from the fan discharge jet and external heat sources.
+The Vaisala PTB330 and Testo 622 will be installed in a representative laboratory location, away from the fan discharge jet and external heat sources.
 
 The additional WIKA A2G-500 will measure the upstream nozzle gauge pressure relative to the laboratory atmosphere. Its accuracy is sufficient for this supplementary density correction, whereas the higher-accuracy Furness FCO560 instruments are retained for the primary pressure measurements described in Section 12.2.
 
@@ -1232,16 +1233,17 @@ Digital communication will be used whenever available, while atmospheric conditi
 | TC Direct 753-652 | $T_n$, $T_1$ | USB | Automatic |
 | WIKA A2G-500 | $p_{\mathrm{up},g}$ | Modbus RTU via RS-485/USB adapter | Automatic |
 | HIOKI PW3337 | $P_{\mathrm{el}}$ | Ethernet | Automatic |
-| Testo 622 | $p_a$, RH | Digital display | Manual |
+| Vaisala PTB330 | $p_a$ | Digital display | Manual |
+| Testo 622 | RH | Digital display | Manual |
 | Testo 465 | $n$ | Digital display | Manual |
 
-*Table X. Communication interfaces and data acquisition methods for the selected instruments.*
+*Table 25. Data acquisition interfaces.*
 
-The proposed data acquisition architecture is illustrated in Figure X.
+The proposed data acquisition architecture is illustrated in Figure 13.
 
 ![Data acquisition system](images/Experimentation/data_acquisition_system.png)
 
-*Figure X. Proposed data acquisition architecture for the experimental test bench. Source: own elaboration.*
+*Figure 13. Data acquisition system. Source: own elaboration.*
 
 The HIOKI PW3337 measurements will be recorded using the manufacturer's GENNECT ONE software [22]. Temperature and pressure data will be retrieved using the corresponding instrument software or communication interfaces.
 
@@ -1255,7 +1257,9 @@ For each operating point, the following preliminary acquisition parameters are a
 | Target samples per automatic channel | 30 |
 | Repeated measurements per operating point | 3 |
 
-*Table X. Proposed experimental data acquisition parameters.*
+*Table 26. Acquisition parameters.*
+
+The selected sampling frequency is intended for steady-state fan performance measurements, not transient pressure fluctuations or blade-passing phenomena.
 
 The instrument clocks and computer clock will be aligned before testing. Measurements will be associated using timestamps, operating-point identifiers and repetition numbers.
 
@@ -1279,7 +1283,7 @@ The resulting dataset will be used to obtain the pressure-flow, electrical power
 
 ## 13.- Preliminary assessment of measurement uncertainty (E2)
 
-Following the methodology introduced in the E2 course notebook, a preliminary uncertainty assessment is performed according to UNE-ISO 5168:2006 and UNE-EN ISO 5801:2019, including its 2025 amendment [17, 24].
+Following the methodology introduced in the E2 course notebook, a preliminary uncertainty assessment is performed according to UNE-ISO 5168:2006 and UNE-EN ISO 5801:2019, including its 2025 amendment [17, 24, 27].
 
 ### 13.1.- Sources of measurement uncertainty
 
@@ -1297,7 +1301,7 @@ Since no experimental tests have been performed at the Release 1 stage, this ass
 | Vaisala PTB330, Class A [23] | Total accuracy: ±0.15 hPa; long-term stability: ±0.10 hPa/year. |
 | Testo 622 [12] | Relative humidity accuracy: ±(2 percentage points + 1 digit) at 25 °C, between 10% and 90% RH. |
 | Testo 465 [13] | Accuracy: ±(0.02% of reading + 1 digit). |
-| TC Direct Type T thermocouples [20] | Sensor uncertainty included in the complete temperature-chain calibration. |
+| TC Direct Type T thermocouples [20] | Individual probe tolerance to be confirmed; sensor uncertainty will be included in the complete temperature-chain calibration. |
 | TC Direct 753-652 [21] | Logger accuracy: ±(0.1% of reading + 0.7 °C). |
 | HIOKI PW3337 [14] | Basic active-power accuracy at 45–66 Hz, below 50% of full scale: ±(0.1% of reading + 0.05% of full scale). |
 | Nozzle throat diameter | Measurement error target: ±0.15 mm. |
@@ -1305,9 +1309,9 @@ Since no experimental tests have been performed at the Release 1 stage, this ass
 | Temperature measurement chain | Expanded uncertainty target: 0.4 K. |
 | Fan outlet diameter | Measurement error target: ±0.50 mm. |
 
-*Table X. Instrument accuracy specifications and proposed measurement uncertainty requirements.*
+*Table 27. Instrument specifications and uncertainty targets.*
 
-The multiple-nozzle installation and the temperature measurement chains will be calibrated to achieve the proposed uncertainty targets.
+The multiple-nozzle installation and the temperature measurement chains will be calibrated and checked against the proposed uncertainty targets.
 
 ### 13.2.- Representative operating point
 
@@ -1332,7 +1336,7 @@ The actual best efficiency point (BEP) cannot be identified without a validated 
 | Preliminary outlet diameter | $D_2$ | 0.514 m |
 | Electrical input power | $P_{\mathrm{el}}$ | 600 W |
 
-*Table X. Representative operating conditions adopted for the preliminary uncertainty assessment.*
+*Table 28. Representative operating point.*
 
 These values constitute an illustrative design scenario and do not represent experimental measurements.
 
@@ -1381,13 +1385,109 @@ $$
 
 The overall electrical-input efficiency is:
 
+$$
+\eta_{\mathrm{el}}=
+\frac{252.65}{600}=0.4211
+$$
+
+The estimated overall electrical-input efficiency is 42.11%.
+
+### 13.3.- Uncertainty propagation
+
+The standard uncertainty associated with an assumed rectangular error distribution is calculated as:
+
+$$
+u(x)=\frac{e_{\max}}{\sqrt{3}}
+$$
+
+For calibration targets expressed as expanded uncertainties with a coverage factor of 2:
+
+$$
+u(x)=\frac{U(x)}{2}
+$$
+
+The combined standard uncertainty is calculated using the propagation method described in the E2 notebook and the GUM [11, 28]:
+
+$$
+u_c(y)=\sqrt{
+\sum_i
+\left(
+\frac{\partial y}{\partial x_i}u(x_i)
+\right)^2
+}
+$$
+
+The primary input quantities are assumed to be independent. Shared variables are retained throughout the calculations to account for correlations between derived quantities.
+
+Humid air density is evaluated from the partial pressures of dry air and water vapour:
+
+$$
+\rho=\frac{p-p_v}{R_dT}+\frac{p_v}{R_vT}
+$$
+
+The standard uncertainties adopted for the representative operating point are:
+
+| Input parameter | Standard uncertainty |
+|:--|--:|
+| Nozzle differential pressure | 0.0795 Pa |
+| Chamber gauge pressure | 0.0318 Pa |
+| Upstream gauge pressure | 7.22 Pa |
+| Atmospheric pressure | 14.43 Pa |
+| Temperature | 0.20 K |
+| Relative humidity | 1.79 percentage points |
+| Nozzle throat diameter | 0.0866 mm |
+| Discharge coefficient | 0.30% relative |
+| Fan outlet diameter | 0.289 mm |
+| Electrical input power | 5.54 W |
+
+*Table 29. Standard input uncertainties.*
+
+The atmospheric pressure error bound includes the specified accuracy and one year of stability allowance. The relative humidity calculation assumes a conservative error bound of ±3.1 percentage points. The electrical power uncertainty is estimated using an assumed total error bound of ±9.6 W, including the instrument contribution for a provisional 6 kW full-scale setting and an additional measurement-chain allowance.
+
+The nozzle discharge coefficient and temperature uncertainties are calibration targets rather than demonstrated instrument performance. The final uncertainty budget must avoid double counting throat-area uncertainty if it is already included in the calibrated flow coefficient.
+
+The expanded uncertainty is calculated using:
+
+$$
+U(y)=2u_c(y)
+$$
+
+During experimental testing, the Type A contribution will also be evaluated using independent repeated measurements:
+
+$$
+u_A(\bar{x})=\frac{s}{\sqrt{N}}
+$$
+
+where $s$ is the experimental standard deviation and $N$ is the number of independent repeated measurements. The final propagation can be implemented in Python using the uncertainties package [29].
+
+### 13.4.- Results and assessment
+
+| Quantity | Estimated value | Expanded uncertainty | Relative expanded uncertainty | ISO 5801 reference limit [24] |
+|:--|--:|--:|--:|--:|
+| Volume flow rate | 2.400 m³/s | 0.0148 m³/s | 0.62% | 2.0% |
+| Fan dynamic pressure | 80.27 Pa | 1.05 Pa | 1.31% | 4.0% |
+| Fan total pressure | 105.27 Pa | 1.05 Pa | 1.00% | 1.4% |
+| Aerodynamic power | 252.65 W | 4.01 W | 1.59% | 2.5% |
+| Electrical input power | 600 W | 11.09 W | 1.85% | — |
+| Overall electrical-input efficiency | 42.11% | 1.03 percentage points | 2.44% | — |
+
+*Table 30. Preliminary expanded uncertainties.*
+
+The calculated uncertainties are below the corresponding ISO 5801 Table 13 reference limits for the evaluated aerodynamic quantities, provided that the proposed calibration targets are achieved.
+
+The electrical-input efficiency is not directly compared with the standard impeller efficiency limit because shaft power is not measured.
+
+This assessment remains preliminary. Final uncertainty evaluation requires actual calibration results, confirmation of the electrical measurement range, experimental repeatability, flow uniformity and verification of the measurement geometry.
+
+The assumed operating point does not represent a verified best efficiency point.
+
 ## 14.- Preliminary test bench and application of UNE-EN ISO 5801 (E3)
 
 ### 14.1.- Mounting category and reference setups
 
 #### 14.1.1.- Installation category
 
-According to UNE-EN ISO 5801:2019 [17] and the E3 course notebook [8], the following installation categories are considered:
+The following installation categories studied in the E3 course notebook [8] are considered, based on UNE-EN ISO 5801:2019 [17]:
 
 | Category | Inlet | Outlet |
 |:--:|:--|:--|
@@ -1396,7 +1496,7 @@ According to UNE-EN ISO 5801:2019 [17] and the E3 course notebook [8], the follo
 | C | Ducted | Free |
 | D | Ducted | Ducted |
 
-*Table X. Fan installation categories considered in the E3 course notebook.*
+*Table 31. Installation categories studied in E3.*
 
 A **Category A inlet-chamber configuration** is selected for the proposed experimental test bench.
 
@@ -1427,9 +1527,9 @@ Two existing experimental facilities have been investigated as references for th
 
 This industrial facility uses measuring nozzles and follows AMCA 210. It covers airflow rates from 150 to 15,000 m³/h, including the reference airflow of our SODECA fan (9,770 m³/h).
 
-![EP BTB15000](images/Experimentation/EP_BTB15000.png)
+![EP BTB15000](images/Experimentation/EP_BTB15000.jpg)
 
-*Figure X. EP BTB15,000 industrial fan test bench. Source: EP Ehrler Prüftechnik Engineering [25].*
+*Figure 14. EP BTB15,000 test bench [25].*
 
 **Stellenbosch University axial fan test facility [26]**
 
@@ -1437,7 +1537,7 @@ This facility uses a Category A configuration based on ISO 5801. It incorporates
 
 ![Stellenbosch University test bench](images/Experimentation/Stellenbosch_test_bench.png)
 
-*Figure X. Category A axial fan test facility at Stellenbosch University. Source: Steenkamp et al. (2022), Figure 3 [26].*
+*Figure 15. Stellenbosch Category A test facility [26, Fig. 3].*
 
 Based on these reference installations, the proposed test bench will incorporate:
 
@@ -1466,7 +1566,7 @@ The preliminary internal dimensions are:
 | Reference airflow | $Q$ | 2.714 m³/s |
 | Reference air density | $\rho$ | 1.20 kg/m³ |
 
-*Table X. Preliminary internal dimensions and reference conditions of the proposed test chamber.*
+*Table 32. Inlet chamber dimensions.*
 
 According to ISO 5801, Clause 9.4 [17], the rectangular chamber aspect ratio must satisfy:
 
@@ -1478,7 +1578,7 @@ $$
 \frac{2.40}{1.70}=\boxed{1.412}
 $$
 
-The preliminary fan inlet area and chamber cross-sectional area are:
+Using the geometric diameter as a preliminary reference for the fan inlet area, the fan inlet and chamber cross-sectional areas are:
 
 $$
 A_1=\frac{\pi D_1^2}{4}=0.2075\;\mathrm{m^2}
@@ -1514,7 +1614,7 @@ The low chamber velocity supports the preliminary approximation of inlet total p
 
 #### 14.2.2.- Nozzle arrangement and flow conditioning
 
-Two identical calibrated nozzles with a throat diameter of 340 mm are installed symmetrically in the chamber.
+Two identical nozzles with a throat diameter of 340 mm will be installed symmetrically in the chamber and calibrated before testing.
 
 According to ISO 5801, Annex A.4.1, including its 2025 amendment [17, 24], the following geometric requirements are considered.
 
@@ -1524,7 +1624,7 @@ According to ISO 5801, Annex A.4.1, including its 2025 amendment [17, 24], the f
 | Nozzle centre to lateral wall | $1.5d_n=0.510$ m | 0.600 m |
 | Nozzle centre to upper and lower walls | $1.5d_n=0.510$ m | 0.850 m |
 
-*Table X. Nozzle positioning requirements and selected dimensions.*
+*Table 33. Nozzle spacing.*
 
 Both nozzles will operate simultaneously to maintain a symmetrical airflow distribution.
 
@@ -1547,17 +1647,17 @@ The preliminary axial distances are selected according to ISO 5801, Clause 9.4 a
 | Final settling screen to pressure plane 3 | 0.398 m | 0.550 m |
 | Pressure plane 3 to fan inlet | 0.597 m | 0.800 m |
 
-*Table X. Preliminary axial distances between the main test bench components.*
+*Table 34. Axial distances.*
 
 The effectiveness of the settling screens will be verified during commissioning according to ISO 5801, Clause 9.3.
 
 #### 14.2.3.- Test bench layout and instrumentation
 
-The proposed test bench arrangement is shown in Figure X.
+The proposed test bench arrangement is shown in Figure 16.
 
 ![Dimensioned experimental test bench](images/Experimentation/test_bench_dimensions.png)
 
-*Figure X. Preliminary dimensioned layout of the proposed Category A test bench, including the nozzle arrangement and pressure measurement stations. Source: own elaboration based on ISO 5801 [17, 24] and AMCA 210 [16].*
+*Figure 16. Dimensioned test bench layout. Source: own elaboration [16, 17, 24].*
 
 The longitudinal coordinate $x$ is measured from the upstream chamber wall.
 
@@ -1570,7 +1670,7 @@ The longitudinal coordinate $x$ is measured from the upstream chamber wall.
 | Chamber pressure plane 3 | 4.20 m |
 | SODECA mounting plane | 5.00 m |
 
-*Table X. Preliminary axial coordinates of the test bench components.*
+*Table 35. Component axial positions.*
 
 Three static-pressure measurement stations are incorporated:
 
@@ -1621,7 +1721,7 @@ Six preliminary operating points are selected:
 | P05 | 90% | 8,793 |
 | P06 | 100% | 9,770 |
 
-*Table X. Proposed operating points for the experimental characterization.*
+*Table 36. Proposed operating points.*
 
 These values represent target operating conditions rather than measured airflow rates. The actual achievable range will depend on the auxiliary fan capacity, test bench resistance and stable operating range of the SODECA fan.
 
@@ -1639,7 +1739,7 @@ The proposed experimental procedure consists of the following steps:
 6. Allow the airflow, pressure, rotational speed and electrical power to stabilize.
 7. Record the experimental measurements during a 30-second window, following Section 12.5.
 8. Repeat the measurement three times at each operating point.
-9. Repeat the procedure for the remaining operating points, avoiding unstable or unsafe operating conditions.
+9. Repeat the procedure for the remaining operating points, starting at high airflow and progressively reducing it while avoiding unstable or unsafe operating conditions.
 10. Stop the installation safely and export the recorded data for processing.
 
 The actual rotational speed will be recorded at every operating point.
