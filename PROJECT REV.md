@@ -1034,7 +1034,7 @@ The relative basic instrument error is 0.19%.
 
 The WIKA and Keller instruments present higher relative errors at low differential pressures. Therefore, two **Furness Controls FCO560 precision digital manometers, 2 kPa version, are selected.**
 
-![Furness Controls FCO560](images/Experimentation/FCO560.webp)
+![Furness Controls FCO560](images/Experimentation/FCO560.png)
 
 *Figure 9. Furness Controls FCO560 [18].*
 
@@ -1527,7 +1527,7 @@ Two existing experimental facilities have been investigated as references for th
 
 This industrial facility uses measuring nozzles and follows AMCA 210. It covers airflow rates from 150 to 15,000 m³/h, including the reference airflow of our SODECA fan (9,770 m³/h).
 
-![EP BTB15000](images/Experimentation/EP_BTB15000.jpg)
+![EP BTB15000](images/Experimentation/EP_BTB15000.png)
 
 *Figure 14. EP BTB15,000 test bench [25].*
 
